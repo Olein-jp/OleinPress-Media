@@ -65,7 +65,7 @@ gulp.task( 'js', function(){
 gulp.task( 'watch', function(){
     browserSync.init({
         files: [ './**/*.php' ],
-        proxy: 'http://wpstarter.dev' // Change to your Local WP URL
+        proxy: 'http://oleinpress-media.wp' // Change to your Local WP URL
     });
     gulp.watch( './sass/**/*.scss', ['sass', reload ]);
     gulp.watch( 'images/src/*', [ 'images', reload ] );
