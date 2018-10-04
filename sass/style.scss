@@ -7,6 +7,20 @@ Description:
 Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: oleinpress-media
+Text Domain: oleinpressMedia
 Tags:
 */
+
+//======================================================================
+// Original variables
+//======================================================================
+
+
+//======================================================================
+// Import Bootstrap
+//======================================================================
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background: $white;
+}

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.php",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
   "devDependencies": {
     "browser-sync": "^2.24.7",
     "es6-promise": "^4.2.5",
