@@ -61,6 +61,12 @@ gulp.task( 'js', function(){
         .pipe(gulp.dest( './js'))
 });
 
+// copy library in node_modules to dist directory
+gulp.task( 'copylib', function() {
+    gulp.src('node_modules/bootstrap/dist/js/*').pipe(gulp.dest( 'lib/bootstrap/js/' ) );
+    gulp.src('node_modules/@fortawesome/fontawesome-free/js/*').pipe(gulp.dest( 'lib/fontawesome/js/' ) );
+} );
+
 // watch
 gulp.task( 'watch', function(){
     browserSync.init({

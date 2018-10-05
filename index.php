@@ -9,7 +9,7 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+            <i class="fas fa-address-card"></i>
 			<?php
 			if ( have_posts() ) :
 				if ( is_home() && ! is_front_page() ) :
