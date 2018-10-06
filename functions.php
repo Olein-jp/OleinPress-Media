@@ -111,3 +111,6 @@ add_action( 'wp_enqueue_scripts', 'oleinpressMedia_scripts' );
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+// TGM plugin Activation
+require_once get_template_directory() . '/inc/tgm-plugin-activation.php';

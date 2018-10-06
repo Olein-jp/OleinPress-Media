@@ -64,7 +64,7 @@
             </div>
         </div>
     </header><!-- end .site-header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#global-menu" aria-controls="global-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,10 +131,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <script>
-        jQuery(function($){
-            $('.carousel').carousel({
-                'interval': 5000,
-            });
-        });
-    </script>
+
+	<?php if(function_exists('bcn_display')) :?>
+    <div class="breadcrumbs container" typeof="BreadcrumbList" vocab="https://schema.org/">
+        <?php bcn_display(); ?>
+    </div>
+    <?php endif; ?>
