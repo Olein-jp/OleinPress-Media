@@ -29,3 +29,17 @@ Tags:
 /*--------------------------------------------------------------
 
 --------------------------------------------------------------*/
+.menu-item {
+  @extend .nav-item;
+}
+.sub-menu {
+  //@extend .navbar-nav;
+}
+
+.carousel-item {
+  height: 400px;
+  //display: block;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}

@@ -2781,7 +2781,7 @@ input[type="button"].btn-block {
 
 .nav-tabs {
   border-bottom: 1px solid #dee2e6; }
-  .nav-tabs .nav-item {
+  .nav-tabs .nav-item, .nav-tabs .menu-item {
     margin-bottom: -1px; }
   .nav-tabs .nav-link {
     border: 1px solid transparent;
@@ -2794,7 +2794,8 @@ input[type="button"].btn-block {
       background-color: transparent;
       border-color: transparent; }
   .nav-tabs .nav-link.active,
-  .nav-tabs .nav-item.show .nav-link {
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .show.menu-item .nav-link {
     color: #495057;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff; }
@@ -2811,11 +2812,11 @@ input[type="button"].btn-block {
   color: #fff;
   background-color: #007bff; }
 
-.nav-fill .nav-item {
+.nav-fill .nav-item, .nav-fill .menu-item {
   flex: 1 1 auto;
   text-align: center; }
 
-.nav-justified .nav-item {
+.nav-justified .nav-item, .nav-justified .menu-item {
   flex-basis: 0;
   flex-grow: 1;
   text-align: center; }
@@ -10153,3 +10154,8 @@ readers do not read off random characters that represent icons */
 /*--------------------------------------------------------------
 
 --------------------------------------------------------------*/
+.carousel-item {
+  height: 400px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center; }
