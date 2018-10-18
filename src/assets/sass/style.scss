@@ -14,17 +14,17 @@ Tags:
 //======================================================================
 // Original variables for Bootstrap
 //======================================================================
-
+@import "bootstrap/overwrite-variables";
 
 //======================================================================
 // Import Bootstrap
 //======================================================================
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 //======================================================================
 // Import FontAwesome
 //======================================================================
-@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
 /*--------------------------------------------------------------
 
@@ -42,4 +42,12 @@ Tags:
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
+}
+
+.screen-reader-text {
+  @extend .sr-only;
+}
+
+.navigation {
+  @extend .breadcrumb;
 }

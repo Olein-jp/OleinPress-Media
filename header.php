@@ -42,7 +42,7 @@
                 <div class="col-sm">
 	                <?php
 	                wp_nav_menu( array(
-		                'theme_location' => 'header-menu',
+		                'theme_location'  => 'header-menu',
 		                'menu'            => '',
 		                'menu_class'      => 'header-menu',
 		                'menu_id'         => 'header-menu',
@@ -74,7 +74,7 @@
             <div class="collapse navbar-collapse" id="global-menu">
                 <?php
                 wp_nav_menu( array(
-                    'theme_location' => 'global-menu',
+                    'theme_location'  => 'global-menu',
                     'menu'            => '',
                     'menu_class'      => 'global-menu',
                     'menu_id'         => 'header-menu',
@@ -132,8 +132,4 @@
         </a>
     </div>
 
-	<?php if(function_exists('bcn_display')) :?>
-    <div class="breadcrumbs container" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php bcn_display(); ?>
-    </div>
-    <?php endif; ?>
+	<?php get_template_part( 'template-parts/breadcrumbs' );

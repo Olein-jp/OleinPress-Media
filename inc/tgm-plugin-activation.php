@@ -96,6 +96,11 @@ function oleinpressMedia_register_required_plugins() {
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => true,
 		),
+		array(
+			'name'      => 'WP-PageNavi',
+			'slug'      => 'wp-pagenavi',
+			'required'  => true,
+		),
 
 		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
 		// have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.

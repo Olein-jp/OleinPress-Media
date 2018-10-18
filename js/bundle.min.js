@@ -1,0 +1,1 @@
+jQuery(function(e){e(".carousel").carousel({interval:5e3})});

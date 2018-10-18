@@ -1,70 +1,101 @@
-require( 'es6-promise' ).polyfill();
-
-var gulp = require( 'gulp' );
-var sass = require( 'gulp-sass' );
+var gulp         = require( 'gulp' );
+var sass         = require( 'gulp-sass' );
 var autoprefixer = require( 'gulp-autoprefixer' );
-var rtlcss = require( 'gulp-rtlcss' );
-var rename = require( 'gulp-rename' );
-var plumber = require( 'gulp-plumber' );
-var gutil = require( 'gulp-util' );
-var imagemin = require( 'gulp-imagemin' );
-var concat = require( 'gulp-concat' );
-var jshint = require( 'gulp-jshint' );
-var uglify = require( 'gulp-uglify' );
-var browserSync = require( 'browser-sync' ).create();
-var reload = browserSync.reload;
+var plumber      = require( 'gulp-plumber' );
+var progeny      = require( 'gulp-progeny' );
+var sourcemaps   = require( 'gulp-sourcemaps' );
+var changed      = require( 'gulp-changed' );
+var imagemin     = require( 'gulp-imagemin' );
+var imageminJpg  = require( 'imagemin-jpeg-recompress' );
+var imageminPng  = require( 'imagemin-pngquant' );
+var imageminGif  = require( 'imagemin-gifsicle' );
+var svgmin       = require( 'gulp-svgmin' );
+var concat       = require( 'gulp-concat' );
+var jshint       = require( 'gulp-jshint' );
+var rename       = require( 'gulp-rename' );
+var uglify       = require( 'gulp-uglify' );
+var browserSync  = require( 'browser-sync' );
 
-// Error output console
-var onError = function(err) {
-    console.log( 'An Error occurred:', gutil.colors.magenta(err.message));
-    gutil.beep();
-    this.emit( 'end' );
-};
+var rtlcss       = require( 'gulp-rtlcss' );
+var reload       = browserSync.reload;
 
-// sass
+// Sass
 gulp.task( 'sass', function(){
-    return gulp.src( './sass/**/*.scss' )
-        .pipe(plumber({ errorHandler: onError }))
-        .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(gulp.dest( './' ) )
+    gulp.src( './src/assets/sass/**/*.scss' )
+        .pipe( plumber() )
+        .pipe( progeny() )
+        .pipe( sourcemaps.init() )
+        .pipe( sass( {
+            outputStyle: 'expanded'
+        } ) )
+        .pipe( autoprefixer( {
+            browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
+            cascade: false
+        } ) )
+        .pipe( sourcemaps.write( './' ) )
+        .pipe( gulp.dest( './' ) );
+} );
 
-        .pipe(rtlcss())
-        .pipe(rename({
+// create rtl.css
+gulp.task( 'rtl', function() {
+    gulp.src( './style.css' )
+        .pipe( plumber() )
+        .pipe( sourcemaps.init() )
+        .pipe( rtlcss() )
+        .pipe( rename({
             basename: 'rtl'
         }))
+        .pipe( sourcemaps.write( './' ) )
         .pipe(gulp.dest( './' ) );
-});
+} );
 
-// minify images
-gulp.task( 'images', function(){
-    return gulp.src( './images/src/*')
-        .pipe(plumber({ errorHandler: onError }))
-        .pipe(imagemin({
-            optimizationLevel: 7,
-            progressive: true
-        }))
-        .pipe(gulp.dest( './images/' ));
-})
+// imagemin
+gulp.task( 'imagemin', function() {
+    // jpeg,png,gif
+   gulp.src( './src/assets/images/**/*.+(jpg|jpeg|png|gif)' )
+       .pipe( changed( './images' ) )
+       .pipe( imagemin( [
+           imageminPng(),
+           imageminJpg(),
+           imageminGif({
+               interlaced: false,
+               optimizationLevel: 3,
+               colors: 180
+           } )
+       ] ) )
+       .pipe( gulp.dest( './images/' ) );
+   // svg
+   gulp.src( './src/assets/images/**/*.+(svg)' )
+       .pipe( changed( './images' ) )
+       .pipe( svgmin() )
+       .pipe( gulp.dest( './images/' ) );
+} );
 
 // concat js file(s)
-gulp.task( 'js', function(){
-    return gulp.src([ './js/*.js' ])
-        .pipe(plumber({ errorHandler: onError }))
-        .pipe(jshint())
-        .pipe(jshint.reporter( 'default' ))
-        .pipe(concat( 'app.js' ))
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest( './js'))
-});
+gulp.task( 'js.concat', function() {
+    gulp.src( [
+        './src/assets/js/common.js'
+    ] )
+        .pipe( plumber() )
+        .pipe( jshint() )
+        .pipe( jshint.reporter( 'default' ) )
+        .pipe( concat( 'bundle.js' ) )
+        .pipe( gulp.dest( './js' ) );
+} );
+
+// compress js file(s)
+gulp.task( 'js.compress', function() {
+    gulp.src( './js/bundle.js' )
+        .pipe( plumber() )
+        .pipe( uglify() )
+        .pipe( rename( 'bundle.min.js' ) )
+        .pipe( gulp.dest( './js' ) );
+} );
 
 // copy library in node_modules to dist directory
 gulp.task( 'copylib', function() {
-    gulp.src('node_modules/bootstrap/dist/js/*').pipe(gulp.dest( 'lib/bootstrap/js/' ) );
-    gulp.src('node_modules/@fortawesome/fontawesome-free/js/*').pipe(gulp.dest( 'lib/fontawesome/js/' ) );
+    gulp.src('node_modules/bootstrap/dist/js/*').pipe(gulp.dest( './src/lib/bootstrap/js/' ) );
+    gulp.src('node_modules/@fortawesome/fontawesome-free/js/*').pipe(gulp.dest( './src/lib/fontawesome/js/' ) );
 } );
 
 // watch
@@ -73,10 +104,10 @@ gulp.task( 'watch', function(){
         files: [ './**/*.php' ],
         proxy: 'http://oleinpress-media.wp' // Change to your Local WP URL
     });
-    gulp.watch( './sass/**/*.scss', ['sass', reload ]);
-    gulp.watch( 'images/src/*', [ 'images', reload ] );
-    gulp.watch( './js/**/*.js', [ 'js', reload ]);
+    gulp.watch( './src/assets/sass/**/*.scss', ['sass', 'rtl', reload ]);
+    gulp.watch( './src/assets/images/*', [ 'imagemin', reload ] );
+    gulp.watch( './src/assets/js/**/*.js', [ 'js.concat', 'js.compress', reload ]);
 });
 
 // default task
-gulp.task( 'default', [ 'sass', 'images', 'js', 'watch' ] );
+gulp.task( 'default', [ 'watch' ] );

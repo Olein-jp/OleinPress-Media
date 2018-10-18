@@ -1,5 +1,6 @@
 <?php
 /**
+ *
  * @package OleinPress Media
  * @author Olein-jp
  * @license GPL-2.0+
@@ -8,8 +9,8 @@ get_header();
 ?>
     <div class="content-wrap container">
         <div class="row">
-            <div id="primary" class="content-area col-md-8">
-                <main id="main" class="site-main">
+            <div id="primary" class="content-area col-md-8" >
+                <main id="main" class="site-main" >
                     <?php
                     if ( have_posts() ) :
                         if ( is_home() && ! is_front_page() ) :
@@ -29,15 +30,21 @@ get_header();
                              */
                             get_template_part( 'template-parts/content', get_post_type() );
                         endwhile;
-                        the_posts_navigation();
                     else :
                         get_template_part( 'template-parts/content', 'none' );
                     endif;
                     ?>
 
                 </main><!-- #main -->
+				<?php if ( function_exists('bootstrap_pagination') ) : ?>
+				<div class="c-pagination">
+					<?php bootstrap_pagination(); ?>
+				</div>
+				<?php endif; ?>
             </div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_sidebar(); ?>
+        </div>
+    </div>
+
+<?php get_footer();
