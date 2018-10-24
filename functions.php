@@ -40,7 +40,8 @@ if ( ! function_exists( 'oleinpressMedia_setup' ) ) :
 			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
-		) );
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'oleinpressMedia_setup' );
@@ -48,6 +49,7 @@ add_action( 'after_setup_theme', 'oleinpressMedia_setup' );
 function oleinpressMedia_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'oleinpressMedia_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'oleinpressMedia_content_width', 0 );
 
 function oleinpressMedia_widgets_init() {
@@ -95,6 +97,7 @@ function oleinpressMedia_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
+
 add_action( 'widgets_init', 'oleinpressMedia_widgets_init' );
 
 /**
@@ -112,6 +115,7 @@ function oleinpressMedia_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'oleinpressMedia_scripts' );
 /**
  * Implement the Custom Header feature.
@@ -157,3 +161,9 @@ require_once get_template_directory() . '/inc/tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/wp-bootstrap4.1-pagination.php';
 
 require_once get_template_directory() . '/vendor/autoload.php';
+
+//require_once get_template_directory() . '/inc/class-wp-bootstrap-comment-walker.php';
+
+//require_once get_template_directory() . '/inc/bs4commentwalker.php';
+
+require_once get_template_directory() . '/inc/oleinpressMedia-comments.php';

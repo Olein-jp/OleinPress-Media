@@ -15187,4 +15187,14 @@ readers do not read off random characters that represent icons */
   background-position: center center;
 }
 
+.c-commentList {
+  list-style: none;
+  padding: 0;
+}
+
+.c-commentList li > .children {
+  list-style: none;
+  padding: 0 0 0 5%;
+}
+
 /*# sourceMappingURL=style.css.map */
