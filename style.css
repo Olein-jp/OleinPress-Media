@@ -15403,12 +15403,12 @@ readers do not read off random characters that represent icons */
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin: 0;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .c-site-sns__lists li {
-  line-height: 50px;
-  margin-left: 5px;
+  line-height: 40px;
+  margin-left: 1rem;
 }
 
 .c-site-sns__lists__item-name {
@@ -15436,12 +15436,12 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  line-height: 50px;
+  line-height: 40px;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   background-color: #fff;
   color: #dee2e6;
   -webkit-transition: 1s all ease;
