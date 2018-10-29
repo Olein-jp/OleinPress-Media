@@ -10,6 +10,6 @@ return;
 }
 ?>
 
-<aside id="secondary" class="widget-area col-md-4">
+<aside id="secondary" class="l-contents__sidebar widget-area col-md-4">
     <?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

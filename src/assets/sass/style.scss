@@ -11,20 +11,30 @@ Text Domain: oleinpressMedia
 Tags:
 */
 
-//======================================================================
-// Original variables for Bootstrap
-//======================================================================
+/**
+ * Import original variables for Bootstrap
+ */
 @import "bootstrap/overwrite-variables";
 
-//======================================================================
-// Import Bootstrap
-//======================================================================
-@import "node_modules/bootstrap/scss/bootstrap";
+/**
+ * Import Mixin
+ */
+@import "mixin";
 
-//======================================================================
-// Import FontAwesome
-//======================================================================
-@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+/**
+ * Foundation
+ */
+@import "foundation/foundation";
+
+/**
+ * Layout
+ */
+@import "layout/layout";
+
+/**
+ * Component
+ */
+@import "component/component";
 
 /*--------------------------------------------------------------
 
@@ -34,14 +44,6 @@ Tags:
 }
 .sub-menu {
   //@extend .navbar-nav;
-}
-
-.carousel-item {
-  height: 400px;
-  //display: block;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
 }
 
 .screen-reader-text {
@@ -62,4 +64,167 @@ Tags:
 }
 .c-commentBody > .children {
   //list-style: none;
+}
+
+/*--------------------------------------------------------------
+    entry content
+--------------------------------------------------------------*/
+.entry-content {
+  @include content-styling();
+}
+
+/*--------------------------------------------------------------
+    widget
+--------------------------------------------------------------*/
+.c-widget {
+  margin-bottom: 50px;
+  ul {
+    @extend .list-unstyled;
+    li {
+      .children,
+      .sub-menu {
+        @extend .list-unstyled;
+        padding-left: 1em;
+      }
+    }
+  }
+  select,
+  input {
+    @extend .form-control;
+    color: $gray-500;
+  }
+  table {
+    //@extend .table;
+  }
+
+  &__footer {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+}
+.widget-title {
+  font-weight: 400;
+  font-size: $font-size-lg;
+  color: $gray-700;
+}
+.widget_archive,
+.widget_categories,
+.widget_pages,
+.widget_meta,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_nav_menu {
+  ul {
+    li {
+      font-size: $font-size-sm;
+      color: $gray-400;
+      a {
+        display: inline-block;
+        color: $gray-500;
+        padding: .5em 0;
+      }
+    }
+  }
+}
+.widget_rss {
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      @extend .card;
+      @extend .px-3;
+      @extend .pt-3;
+      @extend .pb-3;
+      @extend .mb-3;
+      .rsswidget {
+        color: $gray-700;
+        line-height: 1.2;
+        margin-bottom: .3em;
+      }
+      .rss-date {
+        @extend .small;
+        margin-bottom: .3em;
+      }
+      .rssSummary {
+        @extend .small;
+        @extend .text-secondary;
+        margin-bottom: .3em;
+      }
+      cite {
+        @extend .small;
+      }
+    }
+  }
+}
+.widget_text {
+  .textwidget {
+    @include content-styling();
+  }
+}
+
+.widget_tag_cloud {
+  .tagcloud {
+    a {
+      @extend .btn;
+      @extend .btn-light;
+      color: $gray-500;
+      padding: $spacer/3 $spacer/2;
+      margin-bottom: $spacer / 2;
+      //@extend .p-1;
+      //@extend .px-1;
+      //@extend .mb-1;
+    }
+  }
+}
+
+.widget_calendar {
+  table {
+    width: 100%;
+    color: $gray-400;
+    caption {
+      background: $gray-100;
+      text-align: center;
+    }
+    td,
+    th {
+      padding: 10px;
+    }
+    thead {
+      color: $gray-500;
+      tr {
+        th {
+          text-align: center;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          text-align: center;
+          a {
+            color: $gray-500;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    tfoot {
+      tr {
+        #prev,
+        #next {
+          a {
+            color: $gray-600;
+            text-decoration: underline;
+          }
+        }
+        #prev {
+          text-align: left;
+        }
+        #next {
+          text-align: right;
+        }
+      }
+    }
+  }
 }

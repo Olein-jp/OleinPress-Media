@@ -5,8 +5,8 @@
  * @license GPL-2.0+
  */
 ?>
-<footer class="site-footer">
-	<div class="container">
+<footer class="l-footer">
+	<div class="c-footer-widget-area container">
 		<div class="row">
 			<?php get_template_part( 'template-parts/footer-3col' ); ?>
 		</div>

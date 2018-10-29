@@ -49,7 +49,7 @@ function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
 		$pagination = '<div class="c-pagination"><ul class="c-pagination__list pagination">';
 
 		foreach ( $pages as $page ) {
-			$pagination .= '<li class="c-pagination__list__item page-item"> ' . str_replace( 'page-numbers', 'page-link', $page ) . '</li>';
+			$pagination .= '<li class="c-pagination__list__item page-item '.(strpos($page, 'current') !== false ? 'active' : '').'"> ' . str_replace( 'page-numbers', 'page-link', $page ) . '</li>';
 		}
 
 		$pagination .= '</ul></div>';

@@ -16,7 +16,17 @@ get_header();
 					while ( have_posts() ) :
 						the_post();
 						get_template_part( 'template-parts/content', get_post_type() );
-						the_post_navigation();
+						?>
+					<div class="c-post-navigation row">
+						<div class="col-sm-6 c-post-navigation__previous">
+							<i class="fas fa-chevron-left"></i> <?php previous_post_link( '%link', '%title' ); ?>
+						</div>
+						<div class="col-sm-6 c-post-navigation__next">
+							<?php next_post_link( '%link', '%title' ); ?> <i class="fas fa-chevron-right"></i>
+						</div>
+					</div>
+						<?php
+//						the_post_navigation();
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :
 							comments_template();

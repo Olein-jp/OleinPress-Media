@@ -1,0 +1,251 @@
+/**
+ * Component
+ */
+.c-site-title {
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0;
+  vertical-align: bottom;
+  @include media-breakpoint-up(sm) {
+    //display: none;
+  }
+  a {
+    color: $gray-700;
+  }
+}
+.c-site-description {
+  margin-bottom: 0;
+  line-height: 20px;
+}
+.c-site-branding {
+
+}
+
+.c-site-sns {
+  display: none;
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+  &__lists {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 5px 0;
+    li {
+      line-height: 50px;
+      margin-left: 5px;
+    }
+    &__item-name {
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      margin: -1px;
+    }
+    a {
+      display: inline-block;
+      &::before {
+        font-family: 'FontAwesome';
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        text-align: center;
+        font-size: 25px;
+        background-color: #fff;
+        color: $gray-300;
+        transition: 1s all ease;
+        border: 1px solid $gray-300;
+      }
+      &:hover::before {
+        background-color: $gray-100;
+      }
+      &[href*="twitter.com"]::before {
+        content: "\f099";
+      }
+      &[href*="facebook.com"]::before {
+        content: "\f09a";
+      }
+      &[href*="amazon.com"]::before,
+      &[href*="amazon.co.jp"]::before {
+        content: "\f270";
+      }
+      &[href*="behance.net"]::before {
+        content: "\f1b4";
+      }
+      &[href*="blogger.com"]::before {
+        content: "\f37c";
+      }
+      &[href*="codepen.io"]::before {
+        content: "\f1cb";
+      }
+      &[href*="behance.net"]::before {
+        content: "\f1b4";
+      }
+      &[href*="dribbble.com"]::before {
+        content: "\f17d";
+      }
+      &[href*="github.com"]::before {
+        content: "\f09b";
+      }
+      &[href*="instagram.com"]::before {
+        content: "\f16d";
+      }
+    }
+  }
+}
+
+.c-carousel {
+  .carousel-item {
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    @include media-breakpoint-up(md) {
+      height: 300px;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 500px;
+    }
+  }
+}
+
+.c-breadcrumbs {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+  font-size: 12px;
+  &__list {
+    margin-bottom: 0;
+  }
+}
+
+.c-pagination {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+ &__list {
+   justify-content: center;
+ }
+}
+
+/**
+ * entries
+ */
+.c-entries {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  &__item {
+    margin-bottom: $spacer * 2;
+  }
+}
+
+.c-entry-summary {
+  border-radius: 0;
+  height: 100%;
+  &__figure {
+    position: relative;
+    overflow: hidden;
+    background-color: $gray-200;
+    margin: 0;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 75%;
+    }
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+    &_noimage {
+      width: 100%;
+      background: $gray-200;
+      height: 250px;
+      text-align: center;
+      font-size: 180px;
+      color: $gray-300;
+      &::before {
+        padding-top: 0;
+      }
+    }
+  }
+  &__content {
+    padding: $spacer;
+  }
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacer / 2;
+  }
+  &__date,
+  &__category {
+    font-size: 12px;
+    color: $gray-500;
+    margin-bottom: 0;
+    svg {
+      margin-right: 5px;
+    }
+  }
+  &__title {
+    line-height: 1;
+    margin-bottom: $spacer;
+    a {
+      font-size: 20px;
+      color: $gray-700;
+    }
+  }
+  &__excerpt {
+    font-size: 14px;
+    color: $gray-500;
+  }
+  &__author {
+    &__image {
+      display: inline;
+      img {
+        border-radius: 50%;
+      }
+    }
+    &__name {
+      display: inline;
+    }
+  }
+}
+
+
+.c-footer-widget-area {
+  padding-top: $spacer * 2;
+  padding-bottom: $spacer * 2;
+}
+.c-copyright {
+  background: $gray-700;
+  font-size: 12px;
+  color: $gray-100;
+  line-height: 1.5;
+  text-align: center;
+  a {
+    color: $gray-500;
+  }
+  &__inner {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+/**
+ * Import project
+ */
+@import "project";

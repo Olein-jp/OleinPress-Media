@@ -16,44 +16,44 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="l-container">
 	<a class="skip-link sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'oleinpress-media' ); ?></a>
-    <header class="site-header">
-        <div class="site-header__inner container">
+    <header class="l-header">
+        <div class="l-header__inner container">
             <div class="row">
-                <div class="col-sm">
+                <div class="c-site-branding col-sm">
 	                <?php
 	                the_custom_logo();
 	                if ( is_front_page() && is_home() ) :
 		                ?>
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                        <h1 class="c-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		                <?php
 	                else :
 		                ?>
-                        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                        <p class="c-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		                <?php
 	                endif;
 	                $_s_description = get_bloginfo( 'description', 'display' );
 	                if ( $_s_description || is_customize_preview() ) :
 		                ?>
-                        <p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
+                        <p class="c-site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
 	                <?php endif; ?>
                 </div>
-                <div class="col-sm">
+                <div class="c-site-sns col-sm">
 	                <?php
 	                wp_nav_menu( array(
 		                'theme_location'  => 'header-menu',
 		                'menu'            => '',
-		                'menu_class'      => 'header-menu',
-		                'menu_id'         => 'header-menu',
-		                'container'       => 'div',
-		                'container_class' => 'header-menu-container',
+		                'menu_class'      => 'c-site-sns__lists',
+		                'menu_id'         => 'site-sns__lists',
+		                'container'       => '',
+		                'container_class' => 'c-header-menu-wrap',
 		                'container_id'    => '',
 		                'fallback_cb'     => 'wp_page_menu',
-		                'before'          => 'before',
-		                'after'           => 'after',
-		                'link_before'     => 'link_before',
-		                'link_after'      => 'link_after',
+		                'before'          => '',
+		                'after'           => '',
+		                'link_before'     => '<span class="c-site-sns__lists__item-name">',
+		                'link_after'      => '</span>',
 		                'echo'            => true,
 		                'depth'           => 1,
 		                'walker'          => '',
@@ -64,9 +64,15 @@
             </div>
         </div>
     </header><!-- end .site-header -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="p-global-nav navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
+<!--            <a class="navbar-brand" href="#">Navbar</a>-->
+			<?php
+			the_custom_logo();
+			?>
+			<p class="p-global-nav__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php
+			?>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#global-menu" aria-controls="global-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -92,7 +98,7 @@
         </div>
     </nav>
 
-    <div id="header-carousel" class="carousel slide" data-ride="carousel">
+    <div id="header-carousel" class="c-carousel carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
 	        <?php $slider = get_posts( array(
 		        'tag' => 'pickup',

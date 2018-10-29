@@ -58,7 +58,7 @@ function oleinpressMedia_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'oleinpressMedia' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'oleinpressMedia' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="c-widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -69,7 +69,7 @@ function oleinpressMedia_widgets_init() {
 		'name'          => esc_html__( 'Footer left', 'oleinpressMedia' ),
 		'id'            => 'footer-left',
 		'description'   => esc_html__( 'Add widgets here.', 'oleinpressMedia' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="c-widget c-widget__footer %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -80,7 +80,7 @@ function oleinpressMedia_widgets_init() {
 		'name'          => esc_html__( 'Footer center', 'oleinpressMedia' ),
 		'id'            => 'footer-center',
 		'description'   => esc_html__( 'Add widgets here.', 'oleinpressMedia' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="c-widget c-widget__footer %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -91,7 +91,7 @@ function oleinpressMedia_widgets_init() {
 		'name'          => esc_html__( 'Footer right', 'oleinpressMedia' ),
 		'id'            => 'footer-right',
 		'description'   => esc_html__( 'Add widgets here.', 'oleinpressMedia' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="c-widget c-widget__footer %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -167,3 +167,19 @@ require_once get_template_directory() . '/vendor/autoload.php';
 //require_once get_template_directory() . '/inc/bs4commentwalker.php';
 
 require_once get_template_directory() . '/inc/oleinpressMedia-comments.php';
+
+require_once get_template_directory() . '/inc/oleinpressMedia-post-navigation.php';
+
+function oleinpressMedia_widget_tagcloud_custom( $args ) {
+	$my_args = array(
+		'orderby'  => 'count',
+		'order'    => 'DESC',
+		'number'   => 0,
+		'largest'  => 12,
+		'smallest' => 12,
+		'unit'     => 'px',
+	);
+	$args = wp_parse_args( $args, $my_args );
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'oleinpressMedia_widget_tagcloud_custom' );

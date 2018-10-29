@@ -7,10 +7,10 @@
  */
 get_header();
 ?>
-    <div class="content-wrap container">
+    <div class="l-contents container">
         <div class="row">
-            <div id="primary" class="content-area col-md-8" >
-                <main id="main" class="site-main" >
+            <div id="primary" class="l-contents__inner col-md-8" >
+                <main id="main" class="l-contents__main site-main" >
                     <?php
                     if ( have_posts() ) :
                         if ( is_home() && ! is_front_page() ) :
@@ -20,26 +20,26 @@ get_header();
                             </header>
                             <?php
                         endif;
-                        /* Start the Loop */
+                        ?>
+							<div class="p-archive">
+								<ul class="c-entries row">
+						<?php
                         while ( have_posts() ) :
                             the_post();
-                            /*
-                             * Include the Post-Type-specific template for the content.
-                             * If you want to override this in a child theme, then include a file
-                             * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                             */
-                            get_template_part( 'template-parts/content', get_post_type() );
+                            get_template_part( 'template-parts/content', 'index' );
                         endwhile;
-                    else :
+                        ?>
+								</ul>
+							</div>
+                    <?php
+					else :
                         get_template_part( 'template-parts/content', 'none' );
                     endif;
                     ?>
 
                 </main><!-- #main -->
 				<?php if ( function_exists('bootstrap_pagination') ) : ?>
-				<div class="c-pagination">
 					<?php bootstrap_pagination(); ?>
-				</div>
 				<?php endif; ?>
             </div><!-- #primary -->
 
