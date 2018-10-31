@@ -15357,7 +15357,7 @@ readers do not read off random characters that represent icons */
  * l-footer
  */
 .l-footer {
-  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
 }
 
 /**
@@ -15403,11 +15403,11 @@ readers do not read off random characters that represent icons */
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin: 0;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .c-site-sns__lists li {
-  line-height: 50px;
+  line-height: 40px;
   margin-right: 1rem;
 }
 

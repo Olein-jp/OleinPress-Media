@@ -15357,7 +15357,7 @@ readers do not read off random characters that represent icons */
  * l-footer
  */
 .l-footer {
-  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
 }
 
 /**
@@ -15643,8 +15643,8 @@ readers do not read off random characters that represent icons */
 }
 
 .c-footer-widget-area {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .c-copyright {

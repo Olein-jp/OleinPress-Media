@@ -10,12 +10,12 @@ return;
 }
 ?>
 
-<aside class="col-md-4 widget-area">
+<div class="col-md-4 widget-area">
 	<?php dynamic_sidebar( 'footer-left' ); ?>
-</aside>
-<aside class="col-md-4 widget-area">
+</div>
+<div class="col-md-4 widget-area">
 	<?php dynamic_sidebar( 'footer-center' ); ?>
-</aside>
-<aside class="col-md-4 widget-area">
+</div>
+<div class="col-md-4 widget-area">
 	<?php dynamic_sidebar( 'footer-right' ); ?>
-</aside>
+</div>
