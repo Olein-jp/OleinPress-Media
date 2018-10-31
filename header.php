@@ -100,23 +100,21 @@
 
     <div id="header-carousel" class="c-carousel carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-	        <?php $slider = get_posts( array(
+	        <?php $slider_args = array(
 		        'tag' => 'pickup',
 		        'posts_per_page' => 5
-	        ) ); ?>
+	        );
+			$the_query = new WP_Query( $slider_args );
+			?>
 	        <?php $count_indicator = 0; ?>
-	        <?php foreach ( $slider as $slide ) : ?>
+	        <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <li data-target="#header-carousel" data-slide-to="<?php echo $count_indicator; ?>" class="<?php echo ( $count_indicator == 0 ) ? 'active' : ''; ?>"></li>
 		        <?php $count_indicator++; ?>
-	        <?php endforeach; ?>
+	        <?php endwhile; endif; wp_reset_postdata(); ?>
         </ol>
         <div class="carousel-inner">
-	        <?php $slider = get_posts( array(
-	                'tag' => 'pickup',
-                    'posts_per_page' => 5
-                ) ); ?>
 	        <?php $count = 0; ?>
-	        <?php foreach ( $slider as $slide ) : ?>
+	        <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                 <div class="carousel-item <?php echo ($count == 0) ? 'active' : ''; ?>" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) ); ?>)">
                     <div class="carousel-caption d-none d-md-block">
                         <h5><?php the_title(); ?></h5>
@@ -126,7 +124,7 @@
                     </div>
                 </div>
 		        <?php $count++; ?>
-	        <?php endforeach; ?>
+	        <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
         <a class="carousel-control-prev" href="#header-carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
