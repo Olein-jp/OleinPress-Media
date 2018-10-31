@@ -77,15 +77,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="global-menu">
+            <div class="c-global-menu collapse navbar-collapse" id="global-menu">
                 <?php
                 wp_nav_menu( array(
                     'theme_location'  => 'global-menu',
                     'menu'            => '',
-                    'menu_class'      => 'global-menu',
+                    'menu_class'      => 'c-global-menu__lists',
                     'menu_id'         => 'header-menu',
-                    'container'       => 'div',
-                    'container_class' => 'global-menu-container',
+                    'container'       => '',
+                    'container_class' => 'c-global-menu',
                     'container_id'    => '',
                     'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                     'echo'            => true,
@@ -99,7 +99,7 @@
     </nav>
 
     <div id="header-carousel" class="c-carousel carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <ol class="c-carousel-indicators carousel-indicators">
 	        <?php $slider_args = array(
 		        'tag' => 'pickup',
 		        'posts_per_page' => 5
@@ -112,15 +112,47 @@
 		        <?php $count_indicator++; ?>
 	        <?php endwhile; endif; wp_reset_postdata(); ?>
         </ol>
-        <div class="carousel-inner">
+        <div class="c-carousel-inner carousel-inner">
 	        <?php $count = 0; ?>
 	        <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                <div class="carousel-item <?php echo ($count == 0) ? 'active' : ''; ?>" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) ); ?>)">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5><?php the_title(); ?></h5>
-                        <ul class="carousel-caption__meta">
-                            <li class="carousel-caption__meta__item"><?php the_tags(); ?></li>
+                <div class="c-carousel-item carousel-item <?php echo ($count == 0) ? 'active' : ''; ?>" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) ); ?>)">
+                    <div class="c-carousel-caption carousel-caption d-none d-md-block">
+                        <h5 class="c-carousel-caption__title"><?php the_title(); ?></h5>
+                        <ul class="c-carousel-caption__meta">
+							<?php
+							$cats = get_the_category();
+							$tags = get_the_tags();
+							?>
+							<?php if ( $cats ) : ?>
+                            <li class="c-carousel-caption__meta__cat">
+								<?php
+								foreach ( $cats as $cat ) {
+									echo '<span>' . $cat->name . '</span>';
+								}
+								?>
+							</li>
+							<?php
+							endif;
+							if ( $tags ) :
+							?>
+							<li class="c-carousel-caption__meta__tag">
+								<?php
+								foreach ( $tags as $tag ) {
+									echo '<span>' . $tag->name . '</span>';
+								}
+								?>
+							</li>
+							<? endif; ?>
                         </ul>
+						<div class="c-carousel-caption__author">
+							<figure class="c-avator-image">
+								<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+							</figure>
+							<span class="c-author-name"><?php the_author(); ?></span>
+						</div>
+						<p class="c-carousel-caption__link">
+							<a href="<?php the_permalink(); ?>">詳しく読む</a>
+						</p>
                     </div>
                 </div>
 		        <?php $count++; ?>

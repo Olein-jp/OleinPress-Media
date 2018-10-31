@@ -5,3 +5,10 @@ $breadcrumb-bg: #fff;
 $pagination-color: #495057;
 $pagination-hover-color: darken($pagination-color, 15%);
 $pagination-active-bg: #495057;
+
+$dropdown-bg: rgba( white, .95 );
+$dropdown-border-color: none;
+$dropdown-border-radius: 0;
+$dropdown-link-color: rgba(0, 0, 0, 0.9);
+$dropdown-link-hover-color: darken( $dropdown-link-color, 5% );
+$dropdown-link-hover-bg: rgba(0, 0, 0, 0.1);

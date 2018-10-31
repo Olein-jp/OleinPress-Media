@@ -106,6 +106,16 @@
   }
 }
 
+.c-global-menu {
+  &__lists {
+    li {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 .c-carousel {
   .carousel-item {
     height: 200px;
@@ -118,7 +128,53 @@
       height: 500px;
     }
   }
+  &-caption {
+    &__title {
+      font-size: 30px;
+    }
+    &__meta {
+      list-style: none;
+      &__cat,
+      &__tag {
+        padding: $spacer/3 0;
+        span {
+          display: inline-block;
+          font-size: 12px;
+          line-height: 1;
+          padding: 3px 10px;
+          margin: 0 5px;
+          border: 1px solid white;
+        }
+      }
+    }
+    &__author {
+      display: flex;
+      justify-content: center;
+      margin-bottom: $spacer;
+    }
+    &__link {
+      a {
+        @extend .btn;
+        //@extend .btn-lg;
+        @extend .btn-outline-light;
+        padding-left: $spacer * 3;
+        padding-right: $spacer * 3;
+      }
+    }
+  }
 }
+
+.c-avator-image {
+  margin: 0 15px 0 0;
+  img {
+    border-radius: 50%;
+  }
+}
+.c-author-name {
+  line-height: 32px;
+}
+
+
 
 .c-breadcrumbs {
   margin-top: $spacer;

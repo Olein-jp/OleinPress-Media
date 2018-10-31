@@ -2702,7 +2702,7 @@ textarea.form-control {
   }
 }
 
-.btn, .widget_tag_cloud .tagcloud a {
+.btn, .c-carousel-caption__link a, .widget_tag_cloud .tagcloud a {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -2724,32 +2724,34 @@ textarea.form-control {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  .btn, .widget_tag_cloud .tagcloud a {
+  .btn, .c-carousel-caption__link a, .widget_tag_cloud .tagcloud a {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.btn:hover, .widget_tag_cloud .tagcloud a:hover, .btn:focus, .widget_tag_cloud .tagcloud a:focus {
+.btn:hover, .c-carousel-caption__link a:hover, .widget_tag_cloud .tagcloud a:hover, .btn:focus, .c-carousel-caption__link a:focus, .widget_tag_cloud .tagcloud a:focus {
   text-decoration: none;
 }
 
-.btn:focus, .widget_tag_cloud .tagcloud a:focus, .btn.focus, .widget_tag_cloud .tagcloud a.focus {
+.btn:focus, .c-carousel-caption__link a:focus, .widget_tag_cloud .tagcloud a:focus, .btn.focus, .c-carousel-caption__link a.focus, .widget_tag_cloud .tagcloud a.focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.btn.disabled, .widget_tag_cloud .tagcloud a.disabled, .btn:disabled, .widget_tag_cloud .tagcloud a:disabled {
+.btn.disabled, .c-carousel-caption__link a.disabled, .widget_tag_cloud .tagcloud a.disabled, .btn:disabled, .c-carousel-caption__link a:disabled, .widget_tag_cloud .tagcloud a:disabled {
   opacity: 0.65;
 }
 
-.btn:not(:disabled):not(.disabled), .widget_tag_cloud .tagcloud a:not(:disabled):not(.disabled) {
+.btn:not(:disabled):not(.disabled), .c-carousel-caption__link a:not(:disabled):not(.disabled), .widget_tag_cloud .tagcloud a:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-a.btn.disabled, .widget_tag_cloud .tagcloud a.disabled,
+a.btn.disabled, .c-carousel-caption__link a.disabled, .widget_tag_cloud .tagcloud a.disabled,
 fieldset:disabled a.btn,
+fieldset:disabled .c-carousel-caption__link a,
+.c-carousel-caption__link fieldset:disabled a,
 fieldset:disabled .widget_tag_cloud .tagcloud a,
 .widget_tag_cloud .tagcloud fieldset:disabled a {
   pointer-events: none;
@@ -3261,38 +3263,40 @@ fieldset:disabled .widget_tag_cloud .tagcloud a,
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
 }
 
-.btn-outline-light {
+.btn-outline-light, .c-carousel-caption__link a {
   color: #f8f9fa;
   background-color: transparent;
   background-image: none;
   border-color: #f8f9fa;
 }
 
-.btn-outline-light:hover {
+.btn-outline-light:hover, .c-carousel-caption__link a:hover {
   color: #212529;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
-.btn-outline-light:focus, .btn-outline-light.focus {
+.btn-outline-light:focus, .c-carousel-caption__link a:focus, .btn-outline-light.focus, .c-carousel-caption__link a.focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
-.btn-outline-light.disabled, .btn-outline-light:disabled {
+.btn-outline-light.disabled, .c-carousel-caption__link a.disabled, .btn-outline-light:disabled, .c-carousel-caption__link a:disabled {
   color: #f8f9fa;
   background-color: transparent;
 }
 
-.btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active,
-.show > .btn-outline-light.dropdown-toggle {
+.btn-outline-light:not(:disabled):not(.disabled):active, .c-carousel-caption__link a:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .c-carousel-caption__link a:not(:disabled):not(.disabled).active,
+.show > .btn-outline-light.dropdown-toggle,
+.c-carousel-caption__link .show > a.dropdown-toggle {
   color: #212529;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
-.btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus,
-.show > .btn-outline-light.dropdown-toggle:focus {
+.btn-outline-light:not(:disabled):not(.disabled):active:focus, .c-carousel-caption__link a:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus, .c-carousel-caption__link a:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-light.dropdown-toggle:focus,
+.c-carousel-caption__link .show > a.dropdown-toggle:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
@@ -3358,14 +3362,14 @@ fieldset:disabled .widget_tag_cloud .tagcloud a,
   pointer-events: none;
 }
 
-.btn-lg, .btn-group-lg > .btn, .widget_tag_cloud .tagcloud .btn-group-lg > a {
+.btn-lg, .btn-group-lg > .btn, .c-carousel-caption__link .btn-group-lg > a, .widget_tag_cloud .tagcloud .btn-group-lg > a {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .btn-group-sm > .btn, .widget_tag_cloud .tagcloud .btn-group-sm > a {
+.btn-sm, .btn-group-sm > .btn, .c-carousel-caption__link .btn-group-sm > a, .widget_tag_cloud .tagcloud .btn-group-sm > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -3460,10 +3464,10 @@ input[type="button"].btn-block {
   color: #212529;
   text-align: right;
   list-style: none;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+  border: 1px solid none;
+  border-radius: 0;
 }
 
 .dropdown-menu-right {
@@ -3583,7 +3587,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: rgba(0, 0, 0, 0.9);
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -3591,9 +3595,9 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: rgba(0, 0, 0, 0.9);
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -3623,7 +3627,7 @@ input[type="button"].btn-block {
 .dropdown-item-text {
   display: block;
   padding: 0.25rem 1.5rem;
-  color: #212529;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .btn-group,
@@ -3636,8 +3640,9 @@ input[type="button"].btn-block {
   vertical-align: middle;
 }
 
-.btn-group > .btn, .widget_tag_cloud .tagcloud .btn-group > a,
+.btn-group > .btn, .c-carousel-caption__link .btn-group > a, .widget_tag_cloud .tagcloud .btn-group > a,
 .btn-group-vertical > .btn,
+.c-carousel-caption__link .btn-group-vertical > a,
 .widget_tag_cloud .tagcloud .btn-group-vertical > a {
   position: relative;
   -webkit-box-flex: 0;
@@ -3646,41 +3651,61 @@ input[type="button"].btn-block {
   flex: 0 1 auto;
 }
 
-.btn-group > .btn:hover, .widget_tag_cloud .tagcloud .btn-group > a:hover,
+.btn-group > .btn:hover, .c-carousel-caption__link .btn-group > a:hover, .widget_tag_cloud .tagcloud .btn-group > a:hover,
 .btn-group-vertical > .btn:hover,
+.c-carousel-caption__link .btn-group-vertical > a:hover,
 .widget_tag_cloud .tagcloud .btn-group-vertical > a:hover {
   z-index: 1;
 }
 
-.btn-group > .btn:focus, .widget_tag_cloud .tagcloud .btn-group > a:focus, .btn-group > .btn:active, .widget_tag_cloud .tagcloud .btn-group > a:active, .btn-group > .btn.active, .widget_tag_cloud .tagcloud .btn-group > a.active,
+.btn-group > .btn:focus, .c-carousel-caption__link .btn-group > a:focus, .widget_tag_cloud .tagcloud .btn-group > a:focus, .btn-group > .btn:active, .c-carousel-caption__link .btn-group > a:active, .widget_tag_cloud .tagcloud .btn-group > a:active, .btn-group > .btn.active, .c-carousel-caption__link .btn-group > a.active, .widget_tag_cloud .tagcloud .btn-group > a.active,
 .btn-group-vertical > .btn:focus,
+.c-carousel-caption__link .btn-group-vertical > a:focus,
 .widget_tag_cloud .tagcloud .btn-group-vertical > a:focus,
 .btn-group-vertical > .btn:active,
+.c-carousel-caption__link .btn-group-vertical > a:active,
 .widget_tag_cloud .tagcloud .btn-group-vertical > a:active,
 .btn-group-vertical > .btn.active,
+.c-carousel-caption__link .btn-group-vertical > a.active,
 .widget_tag_cloud .tagcloud .btn-group-vertical > a.active {
   z-index: 1;
 }
 
-.btn-group .btn + .btn, .btn-group .widget_tag_cloud .tagcloud a + .btn, .widget_tag_cloud .tagcloud .btn-group a + .btn, .btn-group .widget_tag_cloud .tagcloud .btn + a, .widget_tag_cloud .tagcloud .btn-group .btn + a, .btn-group .widget_tag_cloud .tagcloud a + a, .widget_tag_cloud .tagcloud .btn-group a + a,
+.btn-group .btn + .btn, .btn-group .c-carousel-caption__link a + .btn, .c-carousel-caption__link .btn-group a + .btn, .btn-group .widget_tag_cloud .tagcloud a + .btn, .widget_tag_cloud .tagcloud .btn-group a + .btn, .btn-group .c-carousel-caption__link .btn + a, .c-carousel-caption__link .btn-group .btn + a, .btn-group .c-carousel-caption__link a + a, .c-carousel-caption__link .btn-group a + a, .btn-group .widget_tag_cloud .tagcloud .c-carousel-caption__link a + a, .btn-group .widget_tag_cloud .tagcloud .btn + a, .widget_tag_cloud .tagcloud .btn-group .btn + a, .widget_tag_cloud .tagcloud .btn-group .c-carousel-caption__link a + a, .btn-group .widget_tag_cloud .tagcloud a + a, .widget_tag_cloud .tagcloud .btn-group a + a,
 .btn-group .btn + .btn-group,
+.btn-group .c-carousel-caption__link a + .btn-group,
+.c-carousel-caption__link .btn-group a + .btn-group,
 .btn-group .widget_tag_cloud .tagcloud a + .btn-group,
 .widget_tag_cloud .tagcloud .btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
+.btn-group .c-carousel-caption__link .btn-group + a,
+.c-carousel-caption__link .btn-group .btn-group + a,
 .btn-group .widget_tag_cloud .tagcloud .btn-group + a,
 .widget_tag_cloud .tagcloud .btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group,
 .btn-group-vertical .btn + .btn,
+.btn-group-vertical .c-carousel-caption__link a + .btn,
+.c-carousel-caption__link .btn-group-vertical a + .btn,
 .btn-group-vertical .widget_tag_cloud .tagcloud a + .btn,
 .widget_tag_cloud .tagcloud .btn-group-vertical a + .btn,
+.btn-group-vertical .c-carousel-caption__link .btn + a,
+.c-carousel-caption__link .btn-group-vertical .btn + a,
+.btn-group-vertical .c-carousel-caption__link a + a,
+.c-carousel-caption__link .btn-group-vertical a + a,
+.btn-group-vertical .widget_tag_cloud .tagcloud .c-carousel-caption__link a + a,
 .btn-group-vertical .widget_tag_cloud .tagcloud .btn + a,
 .widget_tag_cloud .tagcloud .btn-group-vertical .btn + a,
+.widget_tag_cloud .tagcloud .btn-group-vertical .c-carousel-caption__link a + a,
 .btn-group-vertical .widget_tag_cloud .tagcloud a + a,
 .widget_tag_cloud .tagcloud .btn-group-vertical a + a,
 .btn-group-vertical .btn + .btn-group,
+.btn-group-vertical .c-carousel-caption__link a + .btn-group,
+.c-carousel-caption__link .btn-group-vertical a + .btn-group,
 .btn-group-vertical .widget_tag_cloud .tagcloud a + .btn-group,
 .widget_tag_cloud .tagcloud .btn-group-vertical a + .btn-group,
 .btn-group-vertical .btn-group + .btn,
+.btn-group-vertical .c-carousel-caption__link .btn-group + a,
+.c-carousel-caption__link .btn-group-vertical .btn-group + a,
 .btn-group-vertical .widget_tag_cloud .tagcloud .btn-group + a,
 .widget_tag_cloud .tagcloud .btn-group-vertical .btn-group + a,
 .btn-group-vertical .btn-group + .btn-group {
@@ -3705,19 +3730,21 @@ input[type="button"].btn-block {
   width: auto;
 }
 
-.btn-group > .btn:first-child, .widget_tag_cloud .tagcloud .btn-group > a:first-child {
+.btn-group > .btn:first-child, .c-carousel-caption__link .btn-group > a:first-child, .widget_tag_cloud .tagcloud .btn-group > a:first-child {
   margin-right: 0;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .widget_tag_cloud .tagcloud .btn-group > a:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .c-carousel-caption__link .btn-group > a:not(:last-child):not(.dropdown-toggle), .widget_tag_cloud .tagcloud .btn-group > a:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
+.c-carousel-caption__link .btn-group > .btn-group:not(:last-child) > a,
 .widget_tag_cloud .tagcloud .btn-group > .btn-group:not(:last-child) > a {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group > .btn:not(:first-child), .widget_tag_cloud .tagcloud .btn-group > a:not(:first-child),
+.btn-group > .btn:not(:first-child), .c-carousel-caption__link .btn-group > a:not(:first-child), .widget_tag_cloud .tagcloud .btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
+.c-carousel-caption__link .btn-group > .btn-group:not(:first-child) > a,
 .widget_tag_cloud .tagcloud .btn-group > .btn-group:not(:first-child) > a {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -3738,12 +3765,12 @@ input[type="button"].btn-block {
   margin-left: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .widget_tag_cloud .tagcloud .btn-group-sm > a + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .c-carousel-caption__link .btn-group-sm > a + .dropdown-toggle-split, .widget_tag_cloud .tagcloud .btn-group-sm > a + .dropdown-toggle-split {
   padding-left: 0.375rem;
   padding-right: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .widget_tag_cloud .tagcloud .btn-group-lg > a + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .c-carousel-caption__link .btn-group-lg > a + .dropdown-toggle-split, .widget_tag_cloud .tagcloud .btn-group-lg > a + .dropdown-toggle-split {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -3764,47 +3791,55 @@ input[type="button"].btn-block {
   justify-content: center;
 }
 
-.btn-group-vertical .btn, .btn-group-vertical .widget_tag_cloud .tagcloud a, .widget_tag_cloud .tagcloud .btn-group-vertical a,
+.btn-group-vertical .btn, .btn-group-vertical .c-carousel-caption__link a, .c-carousel-caption__link .btn-group-vertical a, .btn-group-vertical .widget_tag_cloud .tagcloud a, .widget_tag_cloud .tagcloud .btn-group-vertical a,
 .btn-group-vertical .btn-group {
   width: 100%;
 }
 
-.btn-group-vertical > .btn + .btn, .widget_tag_cloud .tagcloud .btn-group-vertical > a + .btn, .widget_tag_cloud .tagcloud .btn-group-vertical > .btn + a, .widget_tag_cloud .tagcloud .btn-group-vertical > a + a,
+.btn-group-vertical > .btn + .btn, .c-carousel-caption__link .btn-group-vertical > a + .btn, .widget_tag_cloud .tagcloud .btn-group-vertical > a + .btn, .c-carousel-caption__link .btn-group-vertical > .btn + a, .c-carousel-caption__link .btn-group-vertical > a + a, .widget_tag_cloud .tagcloud .btn-group-vertical > .btn + a, .widget_tag_cloud .tagcloud .c-carousel-caption__link .btn-group-vertical > a + a, .widget_tag_cloud .tagcloud .btn-group-vertical > a + a,
 .btn-group-vertical > .btn + .btn-group,
+.c-carousel-caption__link .btn-group-vertical > a + .btn-group,
 .widget_tag_cloud .tagcloud .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
+.c-carousel-caption__link .btn-group-vertical > .btn-group + a,
 .widget_tag_cloud .tagcloud .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-right: 0;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .widget_tag_cloud .tagcloud .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .c-carousel-caption__link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .widget_tag_cloud .tagcloud .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.c-carousel-caption__link .btn-group-vertical > .btn-group:not(:last-child) > a,
 .widget_tag_cloud .tagcloud .btn-group-vertical > .btn-group:not(:last-child) > a {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child), .widget_tag_cloud .tagcloud .btn-group-vertical > a:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .c-carousel-caption__link .btn-group-vertical > a:not(:first-child), .widget_tag_cloud .tagcloud .btn-group-vertical > a:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.c-carousel-caption__link .btn-group-vertical > .btn-group:not(:first-child) > a,
 .widget_tag_cloud .tagcloud .btn-group-vertical > .btn-group:not(:first-child) > a {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-.btn-group-toggle > .btn, .widget_tag_cloud .tagcloud .btn-group-toggle > a,
+.btn-group-toggle > .btn, .c-carousel-caption__link .btn-group-toggle > a, .widget_tag_cloud .tagcloud .btn-group-toggle > a,
 .btn-group-toggle > .btn-group > .btn,
+.c-carousel-caption__link .btn-group-toggle > .btn-group > a,
 .widget_tag_cloud .tagcloud .btn-group-toggle > .btn-group > a {
   margin-bottom: 0;
 }
 
-.btn-group-toggle > .btn input[type="radio"], .widget_tag_cloud .tagcloud .btn-group-toggle > a input[type="radio"],
+.btn-group-toggle > .btn input[type="radio"], .c-carousel-caption__link .btn-group-toggle > a input[type="radio"], .widget_tag_cloud .tagcloud .btn-group-toggle > a input[type="radio"],
 .btn-group-toggle > .btn input[type="checkbox"],
+.c-carousel-caption__link .btn-group-toggle > a input[type="checkbox"],
 .widget_tag_cloud .tagcloud .btn-group-toggle > a input[type="checkbox"],
 .btn-group-toggle > .btn-group > .btn input[type="radio"],
+.c-carousel-caption__link .btn-group-toggle > .btn-group > a input[type="radio"],
 .widget_tag_cloud .tagcloud .btn-group-toggle > .btn-group > a input[type="radio"],
 .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+.c-carousel-caption__link .btn-group-toggle > .btn-group > a input[type="checkbox"],
 .widget_tag_cloud .tagcloud .btn-group-toggle > .btn-group > a input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -3918,34 +3953,52 @@ input[type="button"].btn-block {
   display: flex;
 }
 
-.input-group-prepend .btn, .input-group-prepend .widget_tag_cloud .tagcloud a, .widget_tag_cloud .tagcloud .input-group-prepend a,
+.input-group-prepend .btn, .input-group-prepend .c-carousel-caption__link a, .c-carousel-caption__link .input-group-prepend a, .input-group-prepend .widget_tag_cloud .tagcloud a, .widget_tag_cloud .tagcloud .input-group-prepend a,
 .input-group-append .btn,
+.input-group-append .c-carousel-caption__link a,
+.c-carousel-caption__link .input-group-append a,
 .input-group-append .widget_tag_cloud .tagcloud a,
 .widget_tag_cloud .tagcloud .input-group-append a {
   position: relative;
   z-index: 2;
 }
 
-.input-group-prepend .btn + .btn, .input-group-prepend .widget_tag_cloud .tagcloud a + .btn, .widget_tag_cloud .tagcloud .input-group-prepend a + .btn, .input-group-prepend .widget_tag_cloud .tagcloud .btn + a, .widget_tag_cloud .tagcloud .input-group-prepend .btn + a, .input-group-prepend .widget_tag_cloud .tagcloud a + a, .widget_tag_cloud .tagcloud .input-group-prepend a + a,
+.input-group-prepend .btn + .btn, .input-group-prepend .c-carousel-caption__link a + .btn, .c-carousel-caption__link .input-group-prepend a + .btn, .input-group-prepend .widget_tag_cloud .tagcloud a + .btn, .widget_tag_cloud .tagcloud .input-group-prepend a + .btn, .input-group-prepend .c-carousel-caption__link .btn + a, .c-carousel-caption__link .input-group-prepend .btn + a, .input-group-prepend .c-carousel-caption__link a + a, .c-carousel-caption__link .input-group-prepend a + a, .input-group-prepend .widget_tag_cloud .tagcloud .c-carousel-caption__link a + a, .input-group-prepend .widget_tag_cloud .tagcloud .btn + a, .widget_tag_cloud .tagcloud .input-group-prepend .btn + a, .widget_tag_cloud .tagcloud .input-group-prepend .c-carousel-caption__link a + a, .input-group-prepend .widget_tag_cloud .tagcloud a + a, .widget_tag_cloud .tagcloud .input-group-prepend a + a,
 .input-group-prepend .btn + .input-group-text,
+.input-group-prepend .c-carousel-caption__link a + .input-group-text,
+.c-carousel-caption__link .input-group-prepend a + .input-group-text,
 .input-group-prepend .widget_tag_cloud .tagcloud a + .input-group-text,
 .widget_tag_cloud .tagcloud .input-group-prepend a + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
 .input-group-prepend .input-group-text + .btn,
+.input-group-prepend .c-carousel-caption__link .input-group-text + a,
+.c-carousel-caption__link .input-group-prepend .input-group-text + a,
 .input-group-prepend .widget_tag_cloud .tagcloud .input-group-text + a,
 .widget_tag_cloud .tagcloud .input-group-prepend .input-group-text + a,
 .input-group-append .btn + .btn,
+.input-group-append .c-carousel-caption__link a + .btn,
+.c-carousel-caption__link .input-group-append a + .btn,
 .input-group-append .widget_tag_cloud .tagcloud a + .btn,
 .widget_tag_cloud .tagcloud .input-group-append a + .btn,
+.input-group-append .c-carousel-caption__link .btn + a,
+.c-carousel-caption__link .input-group-append .btn + a,
+.input-group-append .c-carousel-caption__link a + a,
+.c-carousel-caption__link .input-group-append a + a,
+.input-group-append .widget_tag_cloud .tagcloud .c-carousel-caption__link a + a,
 .input-group-append .widget_tag_cloud .tagcloud .btn + a,
 .widget_tag_cloud .tagcloud .input-group-append .btn + a,
+.widget_tag_cloud .tagcloud .input-group-append .c-carousel-caption__link a + a,
 .input-group-append .widget_tag_cloud .tagcloud a + a,
 .widget_tag_cloud .tagcloud .input-group-append a + a,
 .input-group-append .btn + .input-group-text,
+.input-group-append .c-carousel-caption__link a + .input-group-text,
+.c-carousel-caption__link .input-group-append a + .input-group-text,
 .input-group-append .widget_tag_cloud .tagcloud a + .input-group-text,
 .widget_tag_cloud .tagcloud .input-group-append a + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
 .input-group-append .input-group-text + .btn,
+.input-group-append .c-carousel-caption__link .input-group-text + a,
+.c-carousel-caption__link .input-group-append .input-group-text + a,
 .input-group-append .widget_tag_cloud .tagcloud .input-group-text + a,
 .widget_tag_cloud .tagcloud .input-group-append .input-group-text + a {
   margin-right: -1px;
@@ -3991,8 +4044,10 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
+.c-carousel-caption__link .input-group-lg > .input-group-prepend > a,
 .widget_tag_cloud .tagcloud .input-group-lg > .input-group-prepend > a,
 .input-group-lg > .input-group-append > .btn,
+.c-carousel-caption__link .input-group-lg > .input-group-append > a,
 .widget_tag_cloud .tagcloud .input-group-lg > .input-group-append > a {
   height: calc(2.875rem + 2px);
   padding: 0.5rem 1rem;
@@ -4006,8 +4061,10 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
+.c-carousel-caption__link .input-group-sm > .input-group-prepend > a,
 .widget_tag_cloud .tagcloud .input-group-sm > .input-group-prepend > a,
 .input-group-sm > .input-group-append > .btn,
+.c-carousel-caption__link .input-group-sm > .input-group-append > a,
 .widget_tag_cloud .tagcloud .input-group-sm > .input-group-append > a {
   height: calc(1.8125rem + 2px);
   padding: 0.25rem 0.5rem;
@@ -4016,24 +4073,28 @@ input[type="button"].btn-block {
   border-radius: 0.2rem;
 }
 
-.input-group > .input-group-prepend > .btn, .widget_tag_cloud .tagcloud .input-group > .input-group-prepend > a,
+.input-group > .input-group-prepend > .btn, .c-carousel-caption__link .input-group > .input-group-prepend > a, .widget_tag_cloud .tagcloud .input-group > .input-group-prepend > a,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
+.c-carousel-caption__link .input-group > .input-group-append:not(:last-child) > a,
 .widget_tag_cloud .tagcloud .input-group > .input-group-append:not(:last-child) > a,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.c-carousel-caption__link .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .widget_tag_cloud .tagcloud .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.input-group > .input-group-append > .btn, .widget_tag_cloud .tagcloud .input-group > .input-group-append > a,
+.input-group > .input-group-append > .btn, .c-carousel-caption__link .input-group > .input-group-append > a, .widget_tag_cloud .tagcloud .input-group > .input-group-append > a,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+.c-carousel-caption__link .input-group > .input-group-prepend:not(:first-child) > a,
 .widget_tag_cloud .tagcloud .input-group > .input-group-prepend:not(:first-child) > a,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.c-carousel-caption__link .input-group > .input-group-prepend:first-child > a:not(:first-child),
 .widget_tag_cloud .tagcloud .input-group > .input-group-prepend:first-child > a:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-right-radius: 0;
@@ -5503,7 +5564,7 @@ input[type="button"].btn-block {
   display: none;
 }
 
-.btn .badge, .widget_tag_cloud .tagcloud a .badge {
+.btn .badge, .c-carousel-caption__link a .badge, .widget_tag_cloud .tagcloud a .badge {
   position: relative;
   top: -1px;
 }
@@ -15493,6 +15554,10 @@ readers do not read off random characters that represent icons */
   content: "\f16d";
 }
 
+.c-global-menu__lists li a {
+  font-size: 14px;
+}
+
 .c-carousel .carousel-item {
   height: 200px;
   background-size: cover;
@@ -15509,6 +15574,55 @@ readers do not read off random characters that represent icons */
   .c-carousel .carousel-item {
     height: 500px;
   }
+}
+
+.c-carousel-caption__title {
+  font-size: 30px;
+}
+
+.c-carousel-caption__meta {
+  list-style: none;
+}
+
+.c-carousel-caption__meta__cat, .c-carousel-caption__meta__tag {
+  padding: 0.33333rem 0;
+}
+
+.c-carousel-caption__meta__cat span, .c-carousel-caption__meta__tag span {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 10px;
+  margin: 0 5px;
+  border: 1px solid white;
+}
+
+.c-carousel-caption__author {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.c-carousel-caption__link a {
+  padding-right: 3rem;
+}
+
+.c-avator-image {
+  margin: 0 0 0 15px;
+}
+
+.c-avator-image img {
+  border-radius: 50%;
+}
+
+.c-author-name {
+  line-height: 32px;
 }
 
 .c-breadcrumbs {
@@ -15643,8 +15757,8 @@ readers do not read off random characters that represent icons */
 }
 
 .c-footer-widget-area {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .c-copyright {
