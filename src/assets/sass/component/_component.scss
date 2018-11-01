@@ -130,14 +130,27 @@
   }
   &-caption {
     &__title {
-      font-size: 30px;
+      margin-bottom: 0;
+      @include media-breakpoint-up(md) {
+        margin-bottom: $spacer;
+      }
+      a {
+        color: white;
+        text-decoration: underline;
+        font-size: 12px;
+        @include media-breakpoint-up(md) {
+          font-size: 30px;
+          text-decoration: none;
+        }
+      }
     }
     &__meta {
-      list-style: none;
-      &__cat,
-      &__tag {
-        padding: $spacer/3 0;
-        span {
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: block;
+        list-style: none;
+        &__cat,
+        &__tag {
           display: inline-block;
           font-size: 12px;
           line-height: 1;
@@ -145,20 +158,30 @@
           margin: 0 5px;
           border: 1px solid white;
         }
+        &__cat {
+          background: white;
+          color: $gray-700;
+        }
       }
     }
     &__author {
-      display: flex;
-      justify-content: center;
-      margin-bottom: $spacer;
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: center;
+        margin-bottom: $spacer;
+      }
     }
     &__link {
       a {
+        display: none;
         @extend .btn;
-        //@extend .btn-lg;
         @extend .btn-outline-light;
-        padding-left: $spacer * 3;
-        padding-right: $spacer * 3;
+        @include media-breakpoint-up(md) {
+          display: inline-block;
+          padding-left: $spacer * 3;
+          padding-right: $spacer * 3;
+        }
       }
     }
   }
@@ -174,6 +197,11 @@
   line-height: 32px;
 }
 
+.c-post-image-header {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
 
 
 .c-breadcrumbs {
@@ -182,6 +210,34 @@
   font-size: 12px;
   &__list {
     margin-bottom: 0;
+  }
+}
+
+.c-post-thumbnail {
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.c-entry-header {
+  border-bottom: 2px solid $gray-300;
+  margin-bottom: 2rem;
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+  &__meta {
+    list-style: none;
+    margin: 0;
+    padding: $spacer/4 $spacer/2;
+    li {
+      display: inline-block;
+      color: $gray-700;
+      font-size: 12px;
+      margin-right: $spacer / 2;
+    }
   }
 }
 
@@ -268,16 +324,16 @@
     font-size: 14px;
     color: $gray-500;
   }
-  &__author {
-    &__image {
-      display: inline;
-      img {
-        border-radius: 50%;
-      }
+}
+.c-entry-author {
+  &__image {
+    display: inline;
+    img {
+      border-radius: 50%;
     }
-    &__name {
-      display: inline;
-    }
+  }
+  &__name {
+    display: inline;
   }
 }
 

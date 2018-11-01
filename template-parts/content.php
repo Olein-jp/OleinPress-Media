@@ -6,13 +6,15 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="c-entry-header">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif; ?>
+			the_title( '<h1 class="c-entry-header__title">', '</h1>' );
+			?>
+		<ul class="c-entry-header__meta">
+			<li class="c-entry-header__meta__date"></li>
+			<li class="c-entry-header__meta__author"></li>
+			<li class="c-entry-header__cat"></li>
+		</ul>
 	</header><!-- .entry-header -->
 
 

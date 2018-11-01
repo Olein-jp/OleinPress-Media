@@ -8,8 +8,8 @@
 $breadcrumbs = new Inc2734\WP_Breadcrumbs\Breadcrumbs();
 $items = $breadcrumbs->get();
 ?>
-<div class="c-breadcrumbs">
-	<nav class="container">
+<div class="c-breadcrumbs col-sm-12">
+<!--	<nav class="container">-->
 		<ol class="c-breadcrumbs__list breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 			<?php foreach ( $items as $key => $item ) : ?>
 			<li class="c-breadcrumbs__list__item breadcrumb-item <?php if ( empty( $item['link'] ) ) { echo 'active'; } ?>" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -26,5 +26,5 @@ $items = $breadcrumbs->get();
 			</li>
 			<?php endforeach; ?>
 		</ol>
-	</nav>
+<!--	</nav>-->
 </div>

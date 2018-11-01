@@ -9,6 +9,7 @@ get_header();
 ?>
     <div class="l-contents container">
         <div class="row">
+			<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
             <div id="primary" class="l-contents__inner col-md-8" >
                 <main id="main" class="l-contents__main site-main" >
                     <?php

@@ -1,15 +1,21 @@
 /**
  * Project
  */
-.p-global-nav__title {
-  font-size: 24px;
-  line-height: 40px;
-  margin: 0;
-  vertical-align: bottom;
+.p-global-nav {
   @include media-breakpoint-up(sm) {
-    display: none;
+    border-top: 1px solid $gray-100;
+    border-bottom: 1px solid $gray-100;
   }
-  a {
-    color: $gray-700;
+  &__title {
+    font-size: 24px;
+    line-height: 40px;
+    margin: 0;
+    vertical-align: bottom;
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+    a {
+      color: $gray-700;
+    }
   }
 }

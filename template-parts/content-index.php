@@ -44,7 +44,7 @@
 					</span>
 				</p>
 				<p class="c-entry-summary__date">
-					<i class="fa fa-calendar" aria-hidden="true"></i>
+					<i class="fas fa-calendar-alt"></i>
 					<time class="c-entry-summary__date__time" datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 				</p>
 			</div>
@@ -56,11 +56,11 @@
 				the_excerpt();
 				?>
 			</div>
-			<div class="c-entry-summary__author">
-				<figure class="c-entry-summary__author__image">
+			<div class="c-entry-author">
+				<figure class="c-entry-author__image">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
 				</figure>
-				<p class="c-entry-summary__author__name">
+				<p class="c-entry-author__name">
 					<?php the_author(); ?>
 				</p>
 			</div>

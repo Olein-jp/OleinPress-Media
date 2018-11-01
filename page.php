@@ -19,7 +19,7 @@ get_template_part( 'template-parts/post-image-header' ); ?>
 					<?php
 					while ( have_posts() ) :
 						the_post();
-						get_template_part( 'template-parts/content', 'single' );
+						get_template_part( 'template-parts/content', 'page' );
 						?>
 					<div class="c-post-navigation row">
 						<div class="col-sm-6 c-post-navigation__previous">
