@@ -117,67 +117,34 @@ function oleinpressMedia_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'oleinpressMedia_scripts' );
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-/**
- * Custom template tags for this theme.
- */
-//require get_template_directory() . '/inc/template-tags.php';
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-//require get_template_directory() . '/inc/template-functions.php';
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
-/**
- * Load Jetpack compatibility file.
- */
-//if ( defined( 'JETPACK__VERSION' ) ) {
-//	require get_template_directory() . '/inc/jetpack.php';
-//}
-/**
- * Load WooCommerce compatibility file.
- */
-//if ( class_exists( 'WooCommerce' ) ) {
-//	require get_template_directory() . '/inc/woocommerce.php';
-//}
 
 
-// Register Custom Navigation Walker
+/**
+ * Load Custom Navigation Walker
+ */
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
-// TGM plugin Activation
-require_once get_template_directory() . '/inc/tgm-plugin-activation.php';
+/**
+ * Load TGM plugin Activation
+ */
+require_once get_template_directory() . '/inc/TMG/tgm-plugin-activation.php';
 
-// wp-basis by inc2734
-// https://packagist.org/packages/inc2734/wp-basis
-//require_once get_template_directory() . '/vendor/inc2734/wp-basis/src/App/Model/Pagination.php';
-//
-
+/**
+ * Load Bootstrap pagination
+ */
 require_once get_template_directory() . '/inc/wp-bootstrap4.1-pagination.php';
 
+/**
+ * Load autploader for composer
+ */
 require_once get_template_directory() . '/vendor/autoload.php';
 
-//require_once get_template_directory() . '/inc/class-wp-bootstrap-comment-walker.php';
-
-//require_once get_template_directory() . '/inc/bs4commentwalker.php';
-
+/**
+ * Load Comments template
+ */
 require_once get_template_directory() . '/inc/oleinpressMedia-comments.php';
 
-function oleinpressMedia_widget_tagcloud_custom( $args ) {
-	$my_args = array(
-		'orderby'  => 'count',
-		'order'    => 'DESC',
-		'number'   => 0,
-		'largest'  => 12,
-		'smallest' => 12,
-		'unit'     => 'px',
-	);
-	$args = wp_parse_args( $args, $my_args );
-	return $args;
-}
-add_filter( 'widget_tag_cloud_args', 'oleinpressMedia_widget_tagcloud_custom' );
+/**
+ * Load OleinPress Media Original functions
+ */
+require_once get_template_directory() . '/inc/function/oleinpressMedia-original-functions.php';
