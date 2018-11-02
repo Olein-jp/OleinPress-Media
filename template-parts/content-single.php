@@ -41,6 +41,17 @@
 	<div class="entry-content">
 		<?php
 		the_content();
+
+		wp_link_pages( array(
+			'before' => '<div class="c-link-pages">',
+			'after' => '</div>',
+			'link_before' => '<span class="page-item btn btn-outline-secondary">',
+			'link_after' => '</span>',
+			'pagelink' =>'%',
+			'next_or_number'   => 'next',
+			'nextpagelink'     => esc_html__( 'Go next', 'oleinpressMedia' ),
+			'previouspagelink' => esc_html__( 'Back previous', 'oleinpressMedia' ),
+		) );
 		?>
 	</div><!-- .entry-content -->
 

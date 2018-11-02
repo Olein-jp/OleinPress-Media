@@ -201,6 +201,14 @@
   position: relative;
   overflow: hidden;
   height: 400px;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+  }
 }
 
 
@@ -241,12 +249,106 @@
   }
 }
 
+.c-link-pages {
+  display: flex;
+  justify-content: space-between;
+  margin: $spacer*3 0;
+  a {
+    margin-right: $spacer;
+  }
+}
+
 .c-pagination {
   margin-top: $spacer;
   margin-bottom: $spacer;
- &__list {
-   justify-content: center;
- }
+  &__list {
+    justify-content: center;
+  }
+}
+
+.c-post-navigation {
+  margin: 3rem 0;
+  &__previous,
+  &__next {
+    &__anchorarea {
+      display: flex;
+      align-items: center;
+      transition: all 1s ease;
+      color: $gray-700;
+      &:hover {
+        text-decoration: none;
+        color: $link-color;
+      }
+    }
+    &__arrow {
+      font-size: 2rem;
+      min-height: 100px;
+    }
+    .c-post-navigation__title {
+      &::before {
+        content: "次に新しい記事";
+        display: block;
+        font-size: .8rem;
+        margin-bottom: 5px;
+        color: $gray-500;
+      }
+    }
+  }
+  &__previous {
+    margin-bottom: $spacer;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+    &__anchorarea {
+      justify-content: flex-start;
+    }
+    &__arrow {
+      margin-right: $spacer / 2;
+    }
+    .c-post-navigation__title {
+      &::before {
+        content: "前の古い記事";
+        display: block;
+        font-size: .8rem;
+        margin-bottom: 5px;
+        color: $gray-500;
+      }
+    }
+  }
+  &__next {
+    &__anchorarea {
+      justify-content: flex-end;
+    }
+    &__arrow {
+      margin-left: $spacer / 2;
+    }
+  }
+  &__figure {
+    position: relative;
+    margin-bottom: 0;
+    height: 100px;
+    width: 100px;
+    //background: $gray-300;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: auto;
+    }
+    &_previous {
+      margin-right: $spacer / 2;
+    }
+    &_next {
+      margin-left: $spacer / 2;
+    }
+  }
+  &__title {
+    display: block;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
 }
 
 /**

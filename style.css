@@ -15670,6 +15670,16 @@ readers do not read off random characters that represent icons */
   height: 400px;
 }
 
+.c-post-image-header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
 .c-breadcrumbs {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -15709,6 +15719,22 @@ readers do not read off random characters that represent icons */
   margin-right: 0.5rem;
 }
 
+.c-link-pages {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.c-link-pages a {
+  margin-right: 1rem;
+}
+
 .c-pagination {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -15719,6 +15745,113 @@ readers do not read off random characters that represent icons */
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c-post-navigation {
+  margin: 3rem 0;
+}
+
+.c-post-navigation__previous__anchorarea, .c-post-navigation__next__anchorarea {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  color: #495057;
+}
+
+.c-post-navigation__previous__anchorarea:hover, .c-post-navigation__next__anchorarea:hover {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.c-post-navigation__previous__arrow, .c-post-navigation__next__arrow {
+  font-size: 2rem;
+  min-height: 100px;
+}
+
+.c-post-navigation__previous .c-post-navigation__title::before, .c-post-navigation__next .c-post-navigation__title::before {
+  content: "次に新しい記事";
+  display: block;
+  font-size: .8rem;
+  margin-bottom: 5px;
+  color: #adb5bd;
+}
+
+.c-post-navigation__previous {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 992px) {
+  .c-post-navigation__previous {
+    margin-bottom: 0;
+  }
+}
+
+.c-post-navigation__previous__anchorarea {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c-post-navigation__previous__arrow {
+  margin-right: 0.5rem;
+}
+
+.c-post-navigation__previous .c-post-navigation__title::before {
+  content: "前の古い記事";
+  display: block;
+  font-size: .8rem;
+  margin-bottom: 5px;
+  color: #adb5bd;
+}
+
+.c-post-navigation__next__anchorarea {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c-post-navigation__next__arrow {
+  margin-left: 0.5rem;
+}
+
+.c-post-navigation__figure {
+  position: relative;
+  margin-bottom: 0;
+  height: 100px;
+  width: 100px;
+}
+
+.c-post-navigation__figure img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.c-post-navigation__figure_previous {
+  margin-right: 0.5rem;
+}
+
+.c-post-navigation__figure_next {
+  margin-left: 0.5rem;
+}
+
+.c-post-navigation__title {
+  display: block;
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 /**

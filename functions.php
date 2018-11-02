@@ -168,8 +168,6 @@ require_once get_template_directory() . '/vendor/autoload.php';
 
 require_once get_template_directory() . '/inc/oleinpressMedia-comments.php';
 
-require_once get_template_directory() . '/inc/oleinpressMedia-post-navigation.php';
-
 function oleinpressMedia_widget_tagcloud_custom( $args ) {
 	$my_args = array(
 		'orderby'  => 'count',
