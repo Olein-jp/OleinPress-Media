@@ -127,7 +127,7 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 /**
  * Load TGM plugin Activation
  */
-require_once get_template_directory() . '/inc/TMG/tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/TGM/tgm-plugin-activation.php';
 
 /**
  * Load Bootstrap pagination
@@ -148,3 +148,10 @@ require_once get_template_directory() . '/inc/oleinpressMedia-comments.php';
  * Load OleinPress Media Original functions
  */
 require_once get_template_directory() . '/inc/function/oleinpressMedia-original-functions.php';
+
+/**
+ * Load Customizer
+ */
+require_once get_template_directory() . '/inc/customizer/customizer.php';
+
+require_once get_template_directory() . '/inc/customizer/output-style.php';
