@@ -11,6 +11,14 @@
  */
 $customizer = \Inc2734\WP_Customizer_Framework\Customizer_Framework::init();
 
+/**
+ * Control part of customizer default
+ */
+include_once ( get_template_directory() . '/inc/customizer/customize-default/title_tagline/control/control.php' );
+
+
+
+
 $customizer->panel( 'design', [
 	'title' => 'sample',
 	'priority' => 1000,
@@ -34,12 +42,47 @@ $customizer->control(
 	]
 );
 
+$customizer->control(
+	'color',
+	'description-color',
+	[
+		'label'    => __( 'Descriptioncolor', 'snow-monkey' ),
+		'default'  => '#bd3c4f',
+		'priority' => 110,
+	]
+);
+
+$customizer->control(
+	'select',
+	'archive-layout',
+	[
+		'label'    => __( 'Archive layout', 'snow-monkey' ),
+		'priority' => 120,
+		'default'  => 'rich-media',
+		'choices'  => [
+			'rich-media' => __( 'Rich media', 'snow-monkey' ),
+			'simple'     => __( 'Simple', 'snow-monkey' ),
+		],
+	]
+);
+
 if ( ! is_customize_preview() ) {
 	return;
+} else {
+
+	/**
+	 * Preview part of customizer default
+	 */
+	include_once ( get_template_directory() . '/inc/customizer/customize-default/title_tagline/preview/preview.php' );
+
+	$panel_design              = $customizer->get_panel( 'design' );
+	$section_base_design       = $customizer->get_section( 'base-design' );
+	$control_accent_color      = $customizer->get_control( 'accent-color' );
+	$control_description_color = $customizer->get_control( 'description-color' );
+	$control_archive_layout = $customizer->get_control( 'archive-layout');
+
+	$control_accent_color->join( $section_base_design )->join( $panel_design );
+	$control_description_color->join( $section_base_design )->join( $panel_design );
+	$control_archive_layout->join( $section_base_design )->join( $panel_design );
+
 }
-
-$panel   = $customizer->get_panel( 'design' );
-$section = $customizer->get_section( 'base-design' );
-$control = $customizer->get_control( 'accent-color' );
-$control->join( $section )->join( $panel );
-

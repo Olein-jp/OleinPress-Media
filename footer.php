@@ -13,7 +13,16 @@
 	</div>
 	<div class="c-copyright">
 		<div class="c-copyright__inner container">
-			© 2018 <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+			© <?php echo date( "Y" ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<?php
+				if ( '' === get_theme_mod( 'copyright-text' ) ) {
+					bloginfo( 'name' );
+				} else {
+					echo get_theme_mod( 'copyright-text' );
+				}
+				?>
+				<?php  ?>
+			</a>
 			<span class="sep"> | </span>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'oleinpressMedia' ) ); ?>">
 				<?php

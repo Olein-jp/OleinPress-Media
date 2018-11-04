@@ -155,3 +155,5 @@ require_once get_template_directory() . '/inc/function/oleinpressMedia-original-
 require_once get_template_directory() . '/inc/customizer/customizer.php';
 
 require_once get_template_directory() . '/inc/customizer/output-style.php';
+
+new Inc2734\WP_Awesome_Widgets\Awesome_Widgets();

@@ -10,15 +10,24 @@ add_action( 'wp_loaded', function() {
 	$cfs = $customizer->styles();
 
 	$accent_color = get_theme_mod( 'accent-color' );
+	$description_color = get_theme_mod( 'description-color' );
 
 	$cfs->register(
 		[
 			'.c-site-title > a',
-			'.c-site-description',
 		],
 		[
 			"color: {$accent_color}",
-			"border-bottom-color: {$accent_color}",
+		],
+		'@media (min-width: 768px)' // Optional
+	);
+
+	$cfs->register(
+		[
+			'.c-site-description',
+		],
+		[
+			"color: {$description_color}",
 		],
 		'@media (min-width: 768px)' // Optional
 	);

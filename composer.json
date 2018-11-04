@@ -1,6 +1,8 @@
 {
     "require": {
         "inc2734/wp-breadcrumbs": "^1.0",
-        "inc2734/wp-customizer-framework": "^3.3"
+        "inc2734/wp-customizer-framework": "^3.3",
+        "inc2734/wp-awesome-widgets": "^3.3",
+        "inc2734/wp-awesome-components": "^1.0"
     }
 }
