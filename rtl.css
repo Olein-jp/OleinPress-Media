@@ -15776,7 +15776,7 @@ readers do not read off random characters that represent icons */
 }
 
 .c-post-navigation__previous .c-post-navigation__title::before, .c-post-navigation__next .c-post-navigation__title::before {
-  content: "１つ新しい記事";
+  content: "次に新しい記事";
   display: block;
   font-size: .8rem;
   margin-bottom: 5px;
@@ -15805,7 +15805,7 @@ readers do not read off random characters that represent icons */
 }
 
 .c-post-navigation__previous .c-post-navigation__title::before {
-  content: "１つ古い記事";
+  content: "前の古い記事";
   display: block;
   font-size: .8rem;
   margin-bottom: 5px;
