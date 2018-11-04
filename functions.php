@@ -150,10 +150,17 @@ require_once get_template_directory() . '/inc/oleinpressMedia-comments.php';
 require_once get_template_directory() . '/inc/function/oleinpressMedia-original-functions.php';
 
 /**
- * Load Customizer
+ * Load Customizer supported by WP Customizer Framework
+ *
+ * @link https://github.com/inc2734/wp-customizer-framework
  */
 require_once get_template_directory() . '/inc/customizer/customizer.php';
 
 require_once get_template_directory() . '/inc/customizer/output-style.php';
 
-new Inc2734\WP_Awesome_Widgets\Awesome_Widgets();
+/**
+ * Load WP Awesome Widget
+ *
+ * @link https://github.com/inc2734/wp-awesome-widgets
+ */
+require_once get_template_directory() . '/inc/wp-awesome-widgets.php';
