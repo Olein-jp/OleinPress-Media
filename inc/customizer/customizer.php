@@ -19,13 +19,14 @@ include_once ( get_template_directory() . '/inc/customizer/customize-default/tit
 /**
  * Layout
  */
-// Panel
+// Panel:layout
 include_once ( get_template_directory() . '/inc/customizer/layout/panel.php' );
-//// Section
+//// Section:header
 include_once ( get_template_directory() . '/inc/customizer/layout/section/section.php' );
-////// header
+////// Control:header
 include_once ( get_template_directory() . '/inc/customizer/layout/section/header/control.php' );
-
+////// Control:navbar
+include_once ( get_template_directory() . '/inc/customizer/layout/section/navbar/control.php' );
 
 //
 //
@@ -84,6 +85,11 @@ if ( ! is_customize_preview() ) {
 	 * Layout/header
 	 */
 	include_once ( get_template_directory() . '/inc/customizer/layout/section/header/preview.php' );
+
+	/**
+	 * Layout/navbar
+	 */
+	include_once ( get_template_directory() . '/inc/customizer/layout/section/navbar/preview.php' );
 
 //	$panel_design              = $customizer->get_panel( 'design' );
 //	$section_base_design       = $customizer->get_section( 'base-design' );

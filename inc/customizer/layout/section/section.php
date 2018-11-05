@@ -18,3 +18,14 @@ $customizer->section(
 		'priority' => 100,
 	]
 );
+
+/**
+ * layout/navbar
+ */
+$customizer->section(
+	'navbar',
+	[
+		'title'    => __( 'Navbar', 'oleinpressMedia' ),
+		'priority' => 110,
+	]
+);

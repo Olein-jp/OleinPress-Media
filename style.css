@@ -15441,6 +15441,19 @@ readers do not read off random characters that represent icons */
 .c-site-description {
   margin-bottom: 0;
   line-height: 20px;
+  font-size: .8rem;
+}
+
+.c-site-branding__center-logo {
+  text-align: center;
+}
+
+.c-site-branding__big-logo {
+  text-align: center;
+}
+
+.c-site-branding__big-logo > .c-site-title {
+  font-size: 3rem;
 }
 
 .c-site-sns {
@@ -15552,6 +15565,10 @@ readers do not read off random characters that represent icons */
 
 .c-site-sns__lists a[href*="instagram.com"]::before {
   content: "\f16d";
+}
+
+.c-global-menu__lists.center {
+  margin: 0 auto;
 }
 
 .c-global-menu__lists li a {
