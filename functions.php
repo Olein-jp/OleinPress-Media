@@ -121,21 +121,26 @@ add_action( 'wp_enqueue_scripts', 'oleinpressMedia_scripts' );
 
 /**
  * Load Custom Navigation Walker
+ *
+ * @link https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  */
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 /**
  * Load TGM plugin Activation
  */
-require_once get_template_directory() . '/inc/TGM/tgm-plugin-activation.php';
+//require_once get_template_directory() . '/inc/TGM/tgm-plugin-activation.php';
 
 /**
  * Load Bootstrap pagination
+ *
+ * Based on:
+ * @link https://gist.github.com/mtx-z/f95af6cc6fb562eb1a1540ca715ed928
  */
 require_once get_template_directory() . '/inc/wp-bootstrap4.1-pagination.php';
 
 /**
- * Load autploader for composer
+ * Load autoloader for composer
  */
 require_once get_template_directory() . '/vendor/autoload.php';
 
