@@ -1,0 +1,17 @@
+language: node_js
+
+branches:
+  only:
+  - master
+
+before_script: bash ./bin/build.sh
+
+script:
+- ls -al style.css
+
+after_success: bash ./bin/deploy.sh
+
+env:
+  global:
+  - GH_REF: github.com/Olein-jp/OleinPress-Media.git
+  - secure: "pojhurdZ+sVu4f+74GpBuzYPu0VLkhYOGnbzayu3CTvOEWuqtC8g/ENHZrzFqumrxZLg+nJR3s9GFAUugMrMk2lzdeBsFmf7uYwOJihScd8GJjWY00PJ810TS/5oRattx1+mmtM3izkIJ2typHcgJ4Ljlpf1n4aMXfUj6t6AlKV3CKYUqPZGk+rGiLWO3+7uAK+GxJyEmOefGGXgUT7+Jw7vrKXG9kehR/QkGUMXzBGEGOyw6fdJKla3LCNMRuwyv6HfL8mUtNxr4rcxl5c+5pIqXMAhrcuCSsESvXANxa8V1+eFqmDgys/Mk69UEad9KBgOiCLGv/fejVOPjIw9+J5NnjzKrFysU7i5lQeJRFJJeoRuKXDJEtPL6cUVzsHHKosU6p6VJ9igFf3l159lQWs7r354sPtxIp3IxeERqpecwGAttcccm1NcuFg1kYqhSNrkGv9a8sKSqvz1ZzfqEFkzAwj9rYMjcogqLXvl0TZrSZGsPzwzZCFwPsO92qM1qIDJMDOP8xO/A6Jvdn1LuDyd2opH87GChkq99A66fsOdHUoohpEyWDJ7WgkNtz9qLfsT3hyggPmDE4N7aYFkQf1Y8fzDib0yj67UIXRrdgFteWVjuOg20ixlpuvbyZ+V6VStM2TcyJMZs8iExvN6jKFyaMXVZ+tMyJEVhNcIg+U="
