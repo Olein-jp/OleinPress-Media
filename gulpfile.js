@@ -111,3 +111,6 @@ gulp.task( 'watch', function(){
 
 // default task
 gulp.task( 'default', [ 'watch' ] );
+
+// build
+gulp.task( 'build', [ 'sass', 'trl', 'imagemin', 'js.compress' ] );

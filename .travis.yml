@@ -1,44 +1,38 @@
 language: php
+
 php:
-- 5.6
-- 7.1
-sudo:false
+- '7'
+
 branches:
   only:
   - master
-  - "/\\d+\\.\\d+\\.\\d+?.*/"
-env:
-  global:
-  - GIT_COMMITTER_NAME=travis-ci
-  - GIT_COMMITTER_EMAIL=koji.kuno@gmail.com
-  - GIT_AUTHOR_NAME=travis-ci
-  - GIT_AUTHOR_EMAIL=koji.kuno@gmail.com
-  - WP_VERSION=latest WP_MULTISITE=0
+
 cache:
   directories:
   - node_modules
-  - resources
-  - "$HOME/.composer/cache"
+
 install:
 - nvm install 8
-- npm install
-- composer install
+
 before_script:
-- bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+- npm install
+
 script:
-- ls -la style.css index.php vendor/autoload.php
-- composer test
-before_deploy:
-- npm run zip
-- ls -la oleinpress-media.zip
-- export RELEASE_FILE=$(ls oleinpress-media.zip)
+- npm run build
+- ls -la style.css
+
 deploy:
-  provider: releases
-  api_key:
-    secure: mECO9WLPNbN/jusXivHgZz9F0E8/cBphIrzkgRvRwNA9u7fQjP+aH3nArEXc2kJWVgKT7Gh+lZdvyc+p3zUoyo0LifxnYI1MnWnyfwL0Sf3nrunK69yFTbVGGVViufDOUWvlgxmkkqLymfgqJg14GzInStaHtSVn7vgIIWpWTtL7KEah7jDVb7MyZJnSQ9Dhl0aZyKA7Qgvalh4GKX3cfyzlCk6Ru7EHTbnK/GS0TBS1OeQTl/jVwTbH615GwIjlXSMTRhLBKnI+rNoYle3QqXItIttZ5mGx3Pk6QD2A1XNOzi8rR7piN293QrI9euv+XP4DBwsJv818Qi6rYVS5FzGNhcSZMAHUIPSy+z1jJC89khNKB2ryNupPbo6hLitKQKW+uPcuFqpo8vmjMPJTB/qAZSEU9yHRG+mdpM+F5Y1GMDV1cxRSCo/+nbWlg3MXCfiKYvZkXznsDYdxo4+r0rm3koi3vEUmDC41leIBJIPyU+Cg2JCo8M3Gk2MKvWJs4/L+q7jRBfWTMCfm5VNneY/m7yAdI8VVcn8QsUmCbwPKA3iKXYynAsFwl4UG/w4VdjVOLHuw5mlgcbmSppnm/57MBT2OIYvh32jEglFQKLmnCJVgmZOOY26/zDDvCBHVUGndIKPaesRGvMSQYzVIeSzVlr3tv6QPaRxaEP4R3mg=
-  file: "${RELEASE_FILE}"
+  provider: script
+  script: bash ./bin/deploy.sh
   skip_cleanup: true
   on:
-    tags: true
-    repo: Olein-jp/OleinPress-Media
-    php: 7.1
+    branch: master
+    php: 7
+
+env:
+  global:
+  - GIT_COMMITTER_NAME=Olein-jp
+  - GIT_COMMITTER_EMAIL=koji.kuno@gmail.com
+  - GIT_AUTHOR_NAME=Olein-jp
+  - GIT_AUTHOR_EMAIL=koji.kuno@gmail.com
+  - secure: mECO9WLPNbN/jusXivHgZz9F0E8/cBphIrzkgRvRwNA9u7fQjP+aH3nArEXc2kJWVgKT7Gh+lZdvyc+p3zUoyo0LifxnYI1MnWnyfwL0Sf3nrunK69yFTbVGGVViufDOUWvlgxmkkqLymfgqJg14GzInStaHtSVn7vgIIWpWTtL7KEah7jDVb7MyZJnSQ9Dhl0aZyKA7Qgvalh4GKX3cfyzlCk6Ru7EHTbnK/GS0TBS1OeQTl/jVwTbH615GwIjlXSMTRhLBKnI+rNoYle3QqXItIttZ5mGx3Pk6QD2A1XNOzi8rR7piN293QrI9euv+XP4DBwsJv818Qi6rYVS5FzGNhcSZMAHUIPSy+z1jJC89khNKB2ryNupPbo6hLitKQKW+uPcuFqpo8vmjMPJTB/qAZSEU9yHRG+mdpM+F5Y1GMDV1cxRSCo/+nbWlg3MXCfiKYvZkXznsDYdxo4+r0rm3koi3vEUmDC41leIBJIPyU+Cg2JCo8M3Gk2MKvWJs4/L+q7jRBfWTMCfm5VNneY/m7yAdI8VVcn8QsUmCbwPKA3iKXYynAsFwl4UG/w4VdjVOLHuw5mlgcbmSppnm/57MBT2OIYvh32jEglFQKLmnCJVgmZOOY26/zDDvCBHVUGndIKPaesRGvMSQYzVIeSzVlr3tv6QPaRxaEP4R3mg=
