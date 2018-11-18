@@ -1,12 +1,4 @@
 {
-  "name": "wp-starter",
-  "version": "1.0.0",
-  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/gulp/bin/gulp.js",
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -32,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Olein-jp/wp-starter.git"
+    "url": "git+https://github.com/Olein-jp/OleinPress-Media.git"
   },
   "bugs": {
-    "url": "https://github.com/Olein-jp/wp-starter/issues"
+    "url": "https://github.com/Olein-jp/OleinPress-Media/issues"
   },
-  "homepage": "https://github.com/Olein-jp/wp-starter#readme",
+  "homepage": "https://github.com/Olein-jp/OleinPress-Media#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
     "bootstrap": "^4.1.3"
