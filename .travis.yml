@@ -18,8 +18,9 @@ before_script:
 - npm install
 
 script:
-- npm run build
-- ls -la style.css
+#- npm run build
+#- ls -la style.css
+- bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
 
 deploy:
   provider: script
