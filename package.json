@@ -33,5 +33,10 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
     "bootstrap": "^4.1.3"
+  },
+  "script": {
+    "zip:pack": "composer install --no-dev && rsync -a --exclude='.*' resources/ oleinpress-media",
+    "zip:archive": "zip -9 -qmr oleinpress-media.zip oleinpress-media",
+    "zip": "npm run cleanup:zip && npm run zip:pack && npm run zip:archive"
   }
 }
