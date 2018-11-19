@@ -36,7 +36,7 @@
   },
   "scripts": {
     "cleanup:zip": "rimraf oleinpress-media.zip",
-    "zip:pack": "composer install --no-dev && rsync -a --exclude='.*'",
+    "zip:pack": "composer install --no-dev && rsync -a --exclude='.*' oleinpress-media",
     "zip:archive": "zip -9 -qmr oleinpress-media.zip oleinpress-media",
     "zip": "npm run cleanup:zip && npm run zip:pack && npm run zip:archive"
   }
