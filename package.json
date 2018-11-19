@@ -36,7 +36,7 @@
   },
   "scripts": {
     "cleanup:zip": "rimraf oleinpress-media.zip",
-    "zip:pack": "composer install --no-dev && rsync -a --exclude='/node_modules' --exclude='.*' --exclude='/bin' --exclude='package*.json' --exclude='gulpfile*.js' . oleinpress-media",
+    "zip:pack": "composer install --no-dev && rsync -a --exclude='/node_modules' --exclude='.*' --exclude='/bin' --exclude='package*.json' . oleinpress-media",
 //    "zip:pack": "rsync -a --exclude='/vendor' --exclude='/node_modules' --exclude='.*' --exclude='*.ruleset.xml' --exclude='*.config.js' --exclude='*.xml.dist' --exclude='/bin' --exclude='/tests' --exclude='package*.json' . snow-monkey-blocks && cd snow-monkey-blocks && composer install --no-dev",
     "zip:archive": "zip -9 -qmr oleinpress-media.zip oleinpress-media",
     "zip": "npm run cleanup:zip && npm run zip:pack && npm run zip:archive"
