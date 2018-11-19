@@ -21,7 +21,7 @@ before_script:
 
 script:
 - ls -la style.css index.php vendor/autoload.php
-- composer test
+#- composer test
 
 before_deploy:
 - npm run zip
