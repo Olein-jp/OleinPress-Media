@@ -5,7 +5,7 @@ Theme URI: https://wp.olein-design.com/media
 Author: Olein Design
 Author URI: https://olein-design.com
 Description:
-Version: 0.0.1
+Version: 0.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: oleinpressMedia
@@ -15567,7 +15567,7 @@ readers do not read off random characters that represent icons */
   content: "\f16d";
 }
 
-.c-global-menu.center {
+.c-global-menu__lists.center {
   margin: 0 auto;
 }
 
