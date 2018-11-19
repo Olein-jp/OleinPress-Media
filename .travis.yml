@@ -6,6 +6,8 @@ php:
 branches:
   only:
   - master
+  - develop
+  - "/\\d+\\.\\d+\\.\\d+?.*/"
 
 cache:
   directories:
