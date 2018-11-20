@@ -169,3 +169,10 @@ require_once get_template_directory() . '/inc/customizer/output-style.php';
  * @link https://github.com/inc2734/wp-awesome-widgets
  */
 require_once get_template_directory() . '/inc/wp-awesome-widgets.php';
+
+/**
+ * Load WP GitHub Theme Updater
+ *
+ * @link https://github.com/inc2734/wp-github-theme-updater
+ */
+require_once get_template_directory() . '/inc/update/updater.php';
