@@ -9,6 +9,7 @@
 <?php
 $layout_navbar = get_theme_mod( 'layout-navbar' );
 ?>
+<?php if ( has_nav_menu( 'global-menu' ) ) : ?>
 <nav class="p-global-nav navbar navbar-expand-lg navbar-light">
 	<div class="container">
 		<?php
@@ -41,3 +42,4 @@ $layout_navbar = get_theme_mod( 'layout-navbar' );
 		</div>
 	</div>
 </nav>
+<?php endif; ?>
