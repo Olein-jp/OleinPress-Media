@@ -9,9 +9,9 @@ branches:
   - "/\\d+\\.\\d+\\.\\d+?.*/"
 env:
   global:
-  - GIT_COMMITTER_NAME=Olein-jp
+  - GIT_COMMITTER_NAME=travis-ci
   - GIT_COMMITTER_EMAIL=koji.kuno@gmail.com
-  - GIT_AUTHOR_NAME=Olein-jp
+  - GIT_AUTHOR_NAME=travis-ci
   - GIT_AUTHOR_EMAIL=koji.kuno@gmail.com
   - WP_VERSION=latest WP_MULTISITE=0
 cache:
