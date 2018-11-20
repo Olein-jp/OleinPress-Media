@@ -18,7 +18,7 @@ if ( ! function_exists( 'oleinpressMedia_setup' ) ) :
 
 		register_nav_menus( array(
 			'global-menu' => esc_html__( 'Global Menu', 'oleinpressMedia' ),
-			'header-menu' => esc_html__( 'Header Menu', 'oleinpressMedia' ),
+			'header-sns' => esc_html__( 'Header SNS', 'oleinpressMedia' ),
 		) );
 		add_theme_support( 'html5', array(
 			'search-form',

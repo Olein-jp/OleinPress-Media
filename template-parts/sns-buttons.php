@@ -6,10 +6,11 @@
  * Time: 6:00
  */
 ?>
+<?php if ( has_nav_menu( 'header-sns' ) ) : ?>
 <div class="c-site-sns col-sm">
 	<?php
 	wp_nav_menu( array(
-		'theme_location'  => 'header-menu',
+		'theme_location'  => 'header-sns',
 		'menu'            => '',
 		'menu_class'      => 'c-site-sns__lists',
 		'menu_id'         => 'site-sns__lists',
@@ -28,3 +29,4 @@
 	) );
 	?>
 </div>
+<?php endif; ?>
