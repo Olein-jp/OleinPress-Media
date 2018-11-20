@@ -30,13 +30,11 @@ before_deploy:
 - npm run zip
 - ls -la oleinpress-media.zip
 - export RELEASE_FILE=$(ls oleinpress-media.zip)
-
 deploy:
   provider: releases
   api_key:
-    secure: "fce131f829af4fdcee04fda630ac1b1f6a443b4c"
+    secure: BKJLwluteK6m6d16uQ+gIEMY0rIKV9XBE14Wq//0DoDA8p/pvgI1kHb/eCa00SY8LemRr3QCrnz4Z/FBCLE/Mw9YaBARAM/KNroZz54bNbK3T8ij5bl/QvJgJzTxFfCLJgPW2bA5edmMHjmjYdRwAOVvFQrdaCnCU7A+C5OETwTatDMGlJ4RHOk9yvdj/4y6qfmFq6eHAwE50RKOQX5adfC9/VRoMa0B7Lj5CTNlOQfupJjRYTlArBBtCJT40VwyY+IcgbjqXEin6lGv+ZdC6suM7ZIJm2YzmwiDSXc2CufbjVSX8D967s5jVaqY+uJZWsU8cE228RiF47+XbckF9zLK8qBZOXHvQQI53o8Bdfxqw67U2/eCTFOSiVME0bzKofRGtZGd0Ztq0yDHK8GvJ8KDyzzzAWs7T0nu44pfLp4ldIxfBmHpD5geVhfs8YgmxO0TpJwGEBJ8VEj6kFQfUWyhDmWQjjXub28BI+TheB5+MdHcBCnsExtVEZL8pVA2DEa4vA42dhoateio+l4emkgj4CUfWStR3LRYSKAH+F3CRGvHPj6fNH943c72O4Oo0tGkDD3ky4o2i1rgNvgvDXrZbNERU2lJwZ4JwbtZJLGjDqmaZLUw6rJEd4gu/amlsEWyIKOg+4W9Ol4P+XNmnyBYb5JQn3BHsKpUp0kJbsk=
   file: "${RELEASE_FILE}"
-  skip_cleanup: true
   on:
     tags: true
     repo: Olein-jp/OleinPress-Media
