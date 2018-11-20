@@ -34,7 +34,7 @@ deploy:
   provider: releases
   api_key:
     secure: l/tK6taQoTweixYTlvSSp6Dnm8gBFqsAhSwL4VN+OAxEGYHX8rFBC2VsCIgGCUcSw2U9OqgJqPdq5R478S7/dJzRDaHmWqce/tB5dulf9uN7J8KEZfmsJNdDUfSgX348czbJBxO4KvepG1dJFiyEaPFsRFaajLUEoCePfnk8iNh1cMmLRjs0HSxW0yot+43pULXnOJKj/A2tFUtxTTXJHCYTBwJcuECg2/PLtSVFqQfH8/2DC3GNHGj1J4gJXsERzbYK9Yfegv/m7aCjVafXJ56DaPP+RtYMh00yBxVIBQ+L+1w3NXeleQbgBj5gIlJaqP7zUVliwlKpiyzMDx/fYmq4AtWMAK+ueca5TJuuSCXhISVzMvHgMkY8q9kbfJd/eMWO765VKTNe/TFmyr9bYUdyXeJ8Z4pNLMjVyXwo3OO/FrjW6xtVjEasW4JL7prBG3GbLyJ0HvhLp9o7J54N5+p0DTEnvfklk8KQtPF+Zc8Pc5ZXQx5aX1Z0pxOMyWphJm2tTdmSX4K6DBwlH+OtS5DSCJ1GKGN9+VEqFvyVD74PnOYdJ9fVIiy1XK4W9bITHXxEAPWtKKfVfnVcS7gMu09YzxKw5us0yQ1WhpK/0rSftJuntTQZa16wsaK92XVWIVmOKjkRp9MN1Y+0yp1vEN1fNkRcdCn0nKv50wPkv38=
-  file: ''
+  file: "${RELEASE_FILE}"
   on:
     tags: true
     repo: Olein-jp/OleinPress-Media
