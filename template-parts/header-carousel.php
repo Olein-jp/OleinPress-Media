@@ -6,15 +6,16 @@
  * Time: 6:21
  */
 ?>
+<?php $slider_args = array(
+	'tag' => 'pickup',
+	'posts_per_page' => 5
+);
+$the_query = new WP_Query( $slider_args );
+?>
+<?php $count_indicator = 0; ?>
+<?php if ( $the_query->have_posts() ) :  ?>
 <div id="header-carousel" class="c-carousel carousel slide" data-ride="carousel">
 	<ol class="c-carousel-indicators carousel-indicators">
-		<?php $slider_args = array(
-			'tag' => 'pickup',
-			'posts_per_page' => 5
-		);
-		$the_query = new WP_Query( $slider_args );
-		?>
-		<?php $count_indicator = 0; ?>
 		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<li data-target="#header-carousel" data-slide-to="<?php echo $count_indicator; ?>" class="<?php echo ( $count_indicator == 0 ) ? 'active' : ''; ?>"></li>
 			<?php $count_indicator++; ?>
@@ -22,7 +23,7 @@
 	</ol>
 	<div class="c-carousel-inner carousel-inner">
 		<?php $count = 0; ?>
-		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="c-carousel-item carousel-item <?php echo ($count == 0) ? 'active' : ''; ?>" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) ); ?>)">
 				<div class="c-carousel-caption carousel-caption">
 					<h5 class="c-carousel-caption__title">
@@ -62,7 +63,7 @@
 				</div>
 			</div>
 			<?php $count++; ?>
-		<?php endwhile; endif; wp_reset_postdata(); ?>
+		<?php endwhile; ?>
 	</div>
 	<a class="c-carousel-control-prev carousel-control-prev" href="#header-carousel" role="button" data-slide="prev">
 		<span class="c-carousel-control-prev-icon carousel-control-prev-icon" aria-hidden="true"></span>
@@ -73,3 +74,4 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>
+<?php endif; wp_reset_postdata(); ?>

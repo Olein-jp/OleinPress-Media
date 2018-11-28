@@ -15577,6 +15577,11 @@ readers do not read off random characters that represent icons */
   font-size: 14px;
 }
 
+.c-dropdown-menu {
+  -webkit-box-shadow: 0 0 5px #f4f4f4;
+  box-shadow: 0 0 5px #f4f4f4;
+}
+
 .c-carousel .carousel-item {
   height: 200px;
   background-size: cover;
