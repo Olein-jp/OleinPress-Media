@@ -96,6 +96,7 @@ gulp.task( 'js.compress', function() {
 gulp.task( 'copylib', function() {
     gulp.src('node_modules/bootstrap/dist/js/*').pipe(gulp.dest( './src/lib/bootstrap/js/' ) );
     gulp.src('node_modules/@fortawesome/fontawesome-free/js/*').pipe(gulp.dest( './src/lib/fontawesome/js/' ) );
+    gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*').pipe(gulp.dest( './src/lib/fontawesome/webfonts/' ) );
 } );
 
 // watch
