@@ -21,7 +21,7 @@ var reload       = browserSync.reload;
 
 // Sass
 gulp.task( 'sass', function(){
-    gulp.src( './src/assets/sass/**/*.scss' )
+    gulp.src( './src/assets/sass/**/*.scss', '!./src/assets/sass/**/_*' )
         .pipe( plumber() )
         .pipe( progeny() )
         .pipe( sourcemaps.init() )

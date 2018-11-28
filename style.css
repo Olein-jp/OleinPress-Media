@@ -15504,7 +15504,9 @@ readers do not read off random characters that represent icons */
 }
 
 .c-site-sns__lists a::before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: bold;
+  content: '\f0c1';
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
