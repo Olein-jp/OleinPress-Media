@@ -5,7 +5,7 @@ Theme URI: https://wp.olein-design.com/media
 Author: Olein Design
 Author URI: https://olein-design.com
 Description:
-Version: 0.0.27
+Version: 0.0.28
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: oleinpressMedia
@@ -15403,7 +15403,7 @@ readers do not read off random characters that represent icons */
   display: none;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .l-header {
     display: block;
   }
@@ -15444,8 +15444,17 @@ readers do not read off random characters that represent icons */
   font-size: .8rem;
 }
 
+.c-site-branding__center-logo a, .c-site-branding__big-logo a {
+  margin-right: 0;
+}
+
 .c-site-branding__center-logo {
   text-align: center;
+}
+
+.c-site-branding__center-logo a img.custom-logo {
+  width: 100%;
+  height: auto;
 }
 
 .c-site-branding__big-logo {
@@ -15454,6 +15463,11 @@ readers do not read off random characters that represent icons */
 
 .c-site-branding__big-logo > .c-site-title {
   font-size: 3rem;
+}
+
+.c-site-branding__big-logo a img.custom-logo {
+  width: 100%;
+  height: auto;
 }
 
 .c-site-sns {
@@ -15578,8 +15592,8 @@ readers do not read off random characters that represent icons */
 }
 
 .c-dropdown-menu {
-  -webkit-box-shadow: 0 0 5px #f4f4f4;
-  box-shadow: 0 0 5px #f4f4f4;
+  -webkit-box-shadow: 0 0 10px #f4f4f4;
+  box-shadow: 0 0 10px #f4f4f4;
 }
 
 .c-carousel .carousel-item {
@@ -16015,28 +16029,36 @@ readers do not read off random characters that represent icons */
 /**
  * Project
  */
+.p-global-nav {
+  border-bottom: 1px solid #f8f9fa;
+}
+
 @media (min-width: 576px) {
   .p-global-nav {
     border-top: 1px solid #f8f9fa;
-    border-bottom: 1px solid #f8f9fa;
   }
 }
 
-.p-global-nav__title {
+.p-global-nav .navbar-brand {
   font-size: 24px;
   line-height: 40px;
   margin: 0;
   vertical-align: bottom;
+  color: #495057;
+  width: 270px;
+  height: auto;
 }
 
-@media (min-width: 576px) {
-  .p-global-nav__title {
+@media (min-width: 992px) {
+  .p-global-nav .navbar-brand {
     display: none;
   }
 }
 
-.p-global-nav__title a {
-  color: #495057;
+.p-global-nav .navbar-brand img.custom-logo {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
 }
 
 /*--------------------------------------------------------------

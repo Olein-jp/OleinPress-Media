@@ -2,20 +2,26 @@
  * Project
  */
 .p-global-nav {
+  border-bottom: 1px solid $gray-100;
   @include media-breakpoint-up(sm) {
     border-top: 1px solid $gray-100;
-    border-bottom: 1px solid $gray-100;
   }
-  &__title {
+  .navbar-brand {
     font-size: 24px;
     line-height: 40px;
     margin: 0;
     vertical-align: bottom;
-    @include media-breakpoint-up(sm) {
+    color: $gray-700;
+
+    width: 270px;
+    height: auto;
+    @include media-breakpoint-up(lg) {
       display: none;
     }
-    a {
-      color: $gray-700;
+    img.custom-logo {
+      width: 100%;
+      height: auto;
+      vertical-align: bottom;
     }
   }
 }

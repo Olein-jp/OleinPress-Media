@@ -12,23 +12,23 @@ add_action( 'wp_loaded', function() {
 	$accent_color = get_theme_mod( 'accent-color' );
 	$description_color = get_theme_mod( 'description-color' );
 
-	$cfs->register(
-		[
-			'.c-site-title > a',
-		],
-		[
-			"color: {$accent_color}",
-		],
-		'@media (min-width: 768px)' // Optional
-	);
-
-	$cfs->register(
-		[
-			'.c-site-description',
-		],
-		[
-			"color: {$description_color}",
-		],
-		'@media (min-width: 768px)' // Optional
-	);
+//	$cfs->register(
+//		[
+//			'.c-site-title > a',
+//		],
+//		[
+//			"color: {$accent_color}",
+//		],
+//		'@media (min-width: 768px)' // Optional
+//	);
+//
+//	$cfs->register(
+//		[
+//			'.c-site-description',
+//		],
+//		[
+//			"color: {$description_color}",
+//		],
+//		'@media (min-width: 768px)' // Optional
+//	);
 });

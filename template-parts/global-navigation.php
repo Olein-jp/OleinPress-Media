@@ -12,12 +12,12 @@ $layout_navbar = get_theme_mod( 'layout-navbar' );
 <?php if ( has_nav_menu( 'global-menu' ) ) : ?>
 <nav class="p-global-nav navbar navbar-expand-lg navbar-light">
 	<div class="container">
-		<?php
+		<?php if ( has_custom_logo() ) :
 		the_custom_logo();
+		else :
 		?>
-		<p class="p-global-nav__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php
-		?>
+		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+		<?php endif; ?>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#global-menu" aria-controls="global-menu" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -34,7 +34,7 @@ $layout_navbar = get_theme_mod( 'layout-navbar' );
 				'container_id'    => '',
 				'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 				'echo'            => true,
-				'depth'           => 2,
+				'depth'           => 3,
 				'walker'          => new WP_Bootstrap_Navwalker(),
 				'items_wrap'      => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>',
 			) );

@@ -19,13 +19,31 @@
   font-size: .8rem;
 }
 .c-site-branding {
+  &__center-logo,
+  &__big-logo {
+    a {
+      margin-right: 0;
+    }
+  }
   &__center-logo {
     text-align: center;
+    a {
+      img.custom-logo {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
   &__big-logo {
     text-align: center;
     & > .c-site-title {
       font-size: 3rem;
+    }
+    a {
+      img.custom-logo {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

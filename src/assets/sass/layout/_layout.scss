@@ -7,7 +7,7 @@
  */
 .l-header {
   display: none;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(lg) {
     display: block;
   }
   &__inner {

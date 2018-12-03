@@ -36,8 +36,8 @@ if ( ! function_exists( 'oleinpressMedia_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 63,
+			'width'       => 550,
 			'flex-width'  => true,
 			'flex-height' => true,
 			)
@@ -176,3 +176,13 @@ require_once get_template_directory() . '/inc/wp-awesome-widgets.php';
  * @link https://github.com/inc2734/wp-github-theme-updater
  */
 require_once get_template_directory() . '/inc/update/updater.php';
+
+/**
+ * Change custom logo class
+ */
+add_filter( 'get_custom_logo', 'oleinpressMedia_add_class_to_custom_logo' );
+function oleinpressMedia_add_class_to_custom_logo( $html ) {
+	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
+
+	return $html;
+}
